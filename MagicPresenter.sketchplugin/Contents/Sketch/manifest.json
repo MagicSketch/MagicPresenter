@@ -1,0 +1,33 @@
+{
+  "build" : "1",
+  "author" : "James Tang",
+  "commands" : [
+    {
+      "script" : "main.js",
+      "handler" : "openWindow",
+      "shortcut" : "control shift w",
+      "name" : "Open Window",
+      "identifier" : "openWindow"
+    },
+    {
+      "script" : "main.js",
+      "handler" : "printFrame",
+      "shortcut" : "control shift e",
+      "name" : "Print Frame",
+      "identifier" : "printFrame"
+    },
+  ],
+  "menu" : {
+    "title" : "Artboard Preview",
+    "isRoot" : false,
+    "items" : [
+               "openWindow",
+    ]
+  },
+  "identifier" : "design.magicmirror.artboardpreview",
+  "version" : "1.0",
+  "description" : "Artboard Preview",
+  "email" : "james@magicmirror.design",
+  "name" : "Artboard Preview",
+  "homepage" : "http://magicmirror.design"
+}
