@@ -12,6 +12,7 @@
 
 @interface PresentationViewController : NSViewController
 
-@property (nonatomic, strong) NSArray *slides;
+
+- (void)setSlides:(NSArray *)slides atIndex:(NSUInteger)index;
 
 @end

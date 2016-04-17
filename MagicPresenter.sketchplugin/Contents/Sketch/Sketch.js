@@ -10,6 +10,10 @@ Sketch.page = function(context) {
   return this;
 }
 
+Sketch.indexOf = function(object, array) {
+  
+}
+
 Sketch.flattener = function(context) {
 
   _flattener = MSLayerFlattener.alloc().init()

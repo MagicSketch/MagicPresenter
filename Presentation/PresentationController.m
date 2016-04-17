@@ -22,8 +22,8 @@
     NSStoryboard *storyboard = [NSStoryboard storyboardWithName:@"Presentation" bundle:[NSBundle bundleForClass:[self class]]];
     NSWindowController *window = [storyboard instantiateInitialController];
     PresentationViewController *controller = (PresentationViewController *)window.contentViewController;
-    controller.slides = slides;
     _controller = controller;
+    [_controller setSlides:slides atIndex:index];
     _window = window;
     [window showWindow:window.window];
     return YES;

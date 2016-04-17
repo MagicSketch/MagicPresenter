@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^SlideLoadCompletion)(NSImage *image);
-
 @protocol Slide
 
-- (void)loadImage:(SlideLoadCompletion)completion;
+//- (void)loadImage:(SlideLoadCompletion)completion;
+
+- (NSImage *)image;
 
 @end
