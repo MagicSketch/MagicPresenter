@@ -5,22 +5,22 @@ var Sketch = {}
 Sketch.flattener = function(context) {
 
   _flattener = MSLayerFlattener.alloc().init()
-  assertTrue("Has Context", context)
+  // assertTrue("Has Context", context)
   _context = context;
   _document = context.document;
 
-  assertEquals("Has Flattener", _flattener.className(), "MSLayerFlattener")
-  assertEquals("Has Document", _document.className(), "MSDocument")
+  // assertEquals("Has Flattener", _flattener.className(), "MSLayerFlattener")
+  // assertEquals("Has Document", _document.className(), "MSDocument")
 
   this.flattenedImage = function(mslayer) {
     var layer = Sketch.layer(mslayer)
     var array = layer.toMSLayerArray()
     var page = layer.parentPage()
 
-    assertEquals("Has Page ", page.className(), "MSPage")
+    // assertEquals("Has Page ", page.className(), "MSPage")
     var image = _flattener.imageFromLayers_immutablePage_immutableDoc_(array, layer.parentPage().immutableModelObject(), _document.documentData().immutableModelObject())
 
-    assertEquals("Has Image", image.className(), "NSImage")
+    // assertEquals("Has Image", image.className(), "NSImage")
 
     return image
   };
@@ -32,22 +32,22 @@ Sketch.flattener = function(context) {
     request.scale = scale;
 
     var renderer = [MSExportRendererWithSVGSupport exporterForRequest:request colorSpace:[NSColorSpace deviceRGBColorSpace]];
-    assertClass("Should have renderer", renderer, "MSExportRendererWithSVGSupport");
+    // assertClass("  Should have renderer", renderer, "MSExportRendererWithSVGSupport");
 
     var immutablePage = mslayer.parentPage().immutableModelObject()
-    assertClass("Has Page", immutablePage, "MSImmutablePage")
+    // assertClass("  Has Page", immutablePage, "MSImmutablePage")
     request.immutablePage = immutablePage;
 
     var immutableDoc = _document.documentData().immutableModelObject()
-    assertClass("Has ImmutableDoc", immutableDoc, "MSImmutableDocumentData")
+    // assertClass("  Has ImmutableDoc", immutableDoc, "MSImmutableDocumentData")
     request.immutableDocument = immutableDoc;
 
     var objectID = mslayer.objectID();
     request.rootLayerID = objectID;
-    assertNotNil("Has ObjectID", objectID);
+    // assertNotNil("  Has ObjectID", objectID);
 
     var image = renderer.image();
-    assertClass("Has Render Image", image, "NSImage")
+    // assertClass("  Has Render Image", image, "NSImage")
 
     return image;
   };
@@ -161,4 +161,14 @@ Sketch.paths = function() {
   }
 
   return this;
+}
+
+Sketch.delegate = function() {
+  var app = COScript.app("Sketch")
+  return app.delegate();
+}
+
+Sketch.context = function() {
+  var controller = Sketch.delegate()
+  return controller.pluginContext();
 }

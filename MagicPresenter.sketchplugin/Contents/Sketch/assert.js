@@ -1,8 +1,8 @@
 var assertTrue = function(description, condition) {
   if (condition) {
-    log("✅" + description);
+    log("✅  " + description);
   } else {
-    log("❌" + description);
+    log("❌  " + description);
   }
 }
 
@@ -11,7 +11,7 @@ var assertNotNil = function(description, object) {
 }
 
 var assert = function(description) {
-   log("❌" + description);
+   log("❌  " + description);
 }
 
 var assertEquals = function(description, object1, object2) {
