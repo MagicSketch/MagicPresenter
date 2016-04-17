@@ -134,13 +134,15 @@ Sketch.dialog = function(context) {
 
 Sketch.loadFramework = function(name, dir) {
     var mocha = Mocha.sharedRuntime();
-    var success = [mocha loadFrameworkWithName:name inDirectory:(Sketch.paths.root + dir)];
+    var directory = (Sketch.paths().root + dir)
+    var success = [mocha loadFrameworkWithName:name inDirectory:directory];
     return success
 }
 
 Sketch.paths = function() {
   this.scriptPath = coscript.env().scriptURL.path()+""
   this.root = 	(function(){
+               var scriptPath = coscript.env().scriptURL.path() + "";
                var NSScriptPath = NSString.stringWithString(scriptPath);
 
                while(NSScriptPath.lastPathComponent().pathExtension() != "sketchplugin"){
