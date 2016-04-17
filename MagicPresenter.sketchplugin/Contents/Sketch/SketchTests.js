@@ -10,6 +10,8 @@ function run(context) {
     testWrappingLayer(context)
     testExportLayerToImage(context)
   }
+
+  testGetAllArtboardsInPage(context);
 }
 
 // function testGetDelegate() {
@@ -46,4 +48,9 @@ function testExportLayerToImage(context) {
   var layer = Sketch.layer(mslayer)
   var image = layer.exportedImage(context, 3);
   assertNotNil("TestExportLayerToImage", image)
+}
+
+function testGetAllArtboardsInPage(context) {
+  var artboards = Sketch.page(context).artboards()
+  assertTrue("Artboards Count > 0", artboards != null && artboards.count())
 }

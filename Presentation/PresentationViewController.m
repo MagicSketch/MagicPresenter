@@ -9,6 +9,7 @@
 #import "PresentationViewController.h"
 
 @interface PresentationViewController ()
+
 @property (weak) IBOutlet NSImageView *imageView;
 
 @end

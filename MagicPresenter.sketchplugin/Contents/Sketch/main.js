@@ -6,8 +6,8 @@ var present = function(context) {
     load()
     var cl = myClass()
     var object = cl.alloc().init()
+    var artboards = Sketch.page(context).artboards()
     var success = object.launchWithSlides_atIndex_(nil, 0);
-    assertNotNil("did launch presentation", success)
     coscript.shouldKeepAround = true;
     NSThread.mainThread().threadDictionary().setObject_forKey_(object, "design.magicmirror.presentation");
 }

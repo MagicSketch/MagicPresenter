@@ -2,6 +2,14 @@
 
 var Sketch = {}
 
+Sketch.page = function(context) {
+  _page = context.document.currentPage()
+  this.artboards = function() {
+      return _page.artboards();
+  }
+  return this;
+}
+
 Sketch.flattener = function(context) {
 
   _flattener = MSLayerFlattener.alloc().init()
