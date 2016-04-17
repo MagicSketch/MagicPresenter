@@ -131,3 +131,34 @@ Sketch.dialog = function(context) {
     return this;
 
 }
+
+Sketch.loadFramework = function(name, dir) {
+    var mocha = Mocha.sharedRuntime();
+    var success = [mocha loadFrameworkWithName:name inDirectory:(Sketch.paths.root + dir)];
+    return success
+}
+
+Sketch.paths = function() {
+  this.scriptPath = coscript.env().scriptURL.path()+""
+  this.root = 	(function(){
+               var NSScriptPath = NSString.stringWithString(scriptPath);
+
+               while(NSScriptPath.lastPathComponent().pathExtension() != "sketchplugin"){
+               NSScriptPath = NSScriptPath.stringByDeletingLastPathComponent();
+               }
+
+               return NSScriptPath+"";
+               })();
+
+  this.installPath = (function() {
+                     var appSupportPath = NSFileManager.defaultManager().URLsForDirectory_inDomains(NSApplicationSupportDirectory,NSUserDomainMask).firstObject().path();
+                     var pluginFolderPath = appSupportPath.stringByAppendingPathComponent("com.bohemiancoding.sketch3/Plugins")
+                     return pluginFolderPath;
+                     })();
+
+  var classExists = function(name) {
+      return NSClassFromString(name) != null;
+  }
+
+  return this;
+}

@@ -4,30 +4,23 @@
   "commands" : [
     {
       "script" : "main.js",
-      "handler" : "openWindow",
-      "shortcut" : "control shift w",
-      "name" : "Open Window",
-      "identifier" : "openWindow"
-    },
-    {
-      "script" : "main.js",
-      "handler" : "printFrame",
-      "shortcut" : "control shift e",
-      "name" : "Print Frame",
-      "identifier" : "printFrame"
+      "handler" : "present",
+      "shortcut" : "control shift cmd p",
+      "name" : "Magic Presenter",
+      "identifier" : "present"
     },
   ],
   "menu" : {
-    "title" : "Artboard Preview",
-    "isRoot" : false,
+    "title" : "Magic Presenter",
+    "isRoot" : true,
     "items" : [
-               "openWindow",
+               "present",
     ]
   },
-  "identifier" : "design.magicmirror.artboardpreview",
+  "identifier" : "design.magicmirror.presenter",
   "version" : "1.0",
-  "description" : "Artboard Preview",
+  "description" : "Present Your Deck/Slides in Sketch",
   "email" : "james@magicmirror.design",
-  "name" : "Artboard Preview",
+  "name" : "Magic Presenter",
   "homepage" : "http://magicmirror.design"
 }

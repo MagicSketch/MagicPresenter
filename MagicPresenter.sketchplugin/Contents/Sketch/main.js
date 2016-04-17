@@ -7,7 +7,6 @@ var openWindow = function(context) {
     context.document.showMessage("Open Window Started2");
     if ( ! classExists("ArtboardPreviewController")) {
         log("don't have ArtboardPreviewController");
-        var loaded = loadFramework("ArtboardPreview", "/Contents/Sketch");
         log("finish loading " + loaded);
         context.document.showMessage("framework loaded ");
 
@@ -42,9 +41,12 @@ var openWindow = function(context) {
 
 }
 
-var printFrame = function(context) {
-    var selection = context.selection;
-    log(selection);
-    log(selection[0]);
-    log(selection[0].frame());
+var load = function() {
+    var loaded = Sketch.loadFramework("ArtboardPreview", "/Contents/Sketch");
+    return loaded
+}
+
+var myClass = function() {
+  var my = NSClassFromString("MyClass")
+  return my;
 }
