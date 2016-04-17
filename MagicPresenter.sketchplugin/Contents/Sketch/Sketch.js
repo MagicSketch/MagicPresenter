@@ -52,51 +52,6 @@ Sketch.flattener = function(context) {
     return image;
   };
 
-  this.exportedImage2 = function(mslayer, scale) {
-    var layer = Sketch.layer(mslayer)
-    var colorSpace = [NSColorSpace genericRGBColorSpace];
-    assertClass("Should have correct colorspace", colorSpace, "NSColorSpace");
-
-    var rect = mslayer.bounds()
-
-    log("rect: " + rect);
-    var request =  [MSExportRequest requestWithRect:rect scale:scale];
-    assertClass("Should have request", request, "MSExportRequest");
-
-    var renderer = [MSExportRendererWithSVGSupport exporterForRequest:request colorSpace:[NSColorSpace genericRGBColorSpace]];
-    assertClass("Should have renderer", renderer, "MSExportRendererWithSVGSupport");
-
-    var immutablePage = mslayer.parentPage().immutableModelObject()
-    assertClass("Has Page", immutablePage, "MSImmutablePage")
-    request.immutablePage = immutablePage;
-
-    var immutableDoc = _document.documentData().immutableModelObject()
-    assertClass("Has ImmutableDoc", immutableDoc, "MSImmutableDocumentData")
-    request.immutableDocument = immutableDoc;
-
-    var objectID = mslayer.objectID();
-    request.rootLayerID = objectID;
-    assertNotNil("Has ObjectID", objectID);
-
-    var image = renderer.image();
-    assertClass("Has Render Image", image, "NSImage")
-
-    //
-    // if ( ! self.disablePerspective) {
-    //     newImage = [image imageForPath:self.bezierPath scale:self.imageQuality ?: self.defaultScale];
-    // } else {
-    //     newImage = image;
-    // }
-    // MMLog(@"request %@", request);
-    // MMLog(@"renderer %@", renderer);
-    // MMLog(@"image %@", NSStringFromSize(image.size));
-    // MMLog(@"newImage %@", NSStringFromSize(newImage.size));
-    //
-    // [self addWatermarkOnImageIfNeeded:newImage];
-    //
-    return image;
-  }
-
   return this;
 
 }
