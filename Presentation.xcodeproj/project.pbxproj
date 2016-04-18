@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A8166FE1CC5311F00D70CBE /* PresentationWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A8166FC1CC5311F00D70CBE /* PresentationWindowController.h */; };
+		1A8166FF1CC5311F00D70CBE /* PresentationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8166FD1CC5311F00D70CBE /* PresentationWindowController.m */; };
+		1A8167021CC5321800D70CBE /* PresentationWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A8167001CC5321800D70CBE /* PresentationWindow.h */; };
+		1A8167031CC5321800D70CBE /* PresentationWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8167011CC5321800D70CBE /* PresentationWindow.m */; };
 		1AB82C001CC40BDD00E348D4 /* Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AB82BFF1CC40BDD00E348D4 /* Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AB82C071CC40BDD00E348D4 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB82BFC1CC40BDD00E348D4 /* Presentation.framework */; };
 		1AB82C0C1CC40BDD00E348D4 /* PresentationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB82C0B1CC40BDD00E348D4 /* PresentationTests.m */; };
@@ -43,6 +47,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A8166FC1CC5311F00D70CBE /* PresentationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationWindowController.h; sourceTree = "<group>"; };
+		1A8166FD1CC5311F00D70CBE /* PresentationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationWindowController.m; sourceTree = "<group>"; };
+		1A8167001CC5321800D70CBE /* PresentationWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationWindow.h; sourceTree = "<group>"; };
+		1A8167011CC5321800D70CBE /* PresentationWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationWindow.m; sourceTree = "<group>"; };
 		1AB82BFC1CC40BDD00E348D4 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB82BFF1CC40BDD00E348D4 /* Presentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Presentation.h; sourceTree = "<group>"; };
 		1AB82C011CC40BDD00E348D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,6 +112,10 @@
 				1AB82C181CC40BEC00E348D4 /* Presentation.storyboard */,
 				1AB82C191CC40BEC00E348D4 /* PresentationViewController.h */,
 				1AB82C1A1CC40BEC00E348D4 /* PresentationViewController.m */,
+				1A8166FC1CC5311F00D70CBE /* PresentationWindowController.h */,
+				1A8166FD1CC5311F00D70CBE /* PresentationWindowController.m */,
+				1A8167001CC5321800D70CBE /* PresentationWindow.h */,
+				1A8167011CC5321800D70CBE /* PresentationWindow.m */,
 				1AB82C1B1CC40BEC00E348D4 /* Slide.h */,
 			);
 			path = Presentation;
@@ -125,9 +137,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A8166FE1CC5311F00D70CBE /* PresentationWindowController.h in Headers */,
 				1AB82C1C1CC40BEC00E348D4 /* PresentationController.h in Headers */,
 				1AB82C1F1CC40BEC00E348D4 /* PresentationViewController.h in Headers */,
 				1AB82C211CC40BEC00E348D4 /* Slide.h in Headers */,
+				1A8167021CC5321800D70CBE /* PresentationWindow.h in Headers */,
 				1AB82C001CC40BDD00E348D4 /* Presentation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,7 +262,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AB82C201CC40BEC00E348D4 /* PresentationViewController.m in Sources */,
+				1A8166FF1CC5311F00D70CBE /* PresentationWindowController.m in Sources */,
 				1AB82C1D1CC40BEC00E348D4 /* PresentationController.m in Sources */,
+				1A8167031CC5321800D70CBE /* PresentationWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +449,7 @@
 				1AB82C121CC40BDD00E348D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1AB82C131CC40BDD00E348D4 /* Build configuration list for PBXNativeTarget "PresentationTests" */ = {
 			isa = XCConfigurationList;
@@ -441,6 +458,7 @@
 				1AB82C151CC40BDD00E348D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

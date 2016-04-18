@@ -8,8 +8,8 @@
         <!--Window Controller-->
         <scene sceneID="Rm8-LA-Hnl">
             <objects>
-                <windowController showSeguePresentationStyle="single" id="ZD3-Sm-dmc" sceneMemberID="viewController">
-                    <window key="window" title="Presentation" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="qfs-GE-Zvk">
+                <windowController showSeguePresentationStyle="single" id="ZD3-Sm-dmc" customClass="PresentationWindowController" sceneMemberID="viewController">
+                    <window key="window" title="Presentation" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="qfs-GE-Zvk" customClass="PresentationWindow">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
