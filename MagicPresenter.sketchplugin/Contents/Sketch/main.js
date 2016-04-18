@@ -37,7 +37,7 @@ var createSlides = function(artboards, context) {
          this.artboard = artboard;
        },
        "image":function() {
-         return Sketch.layer(this.artboard).exportedImage(context, 3);
+         return Sketch.layer(this.artboard).exportedImage(context, 2);
        },
     });
 
