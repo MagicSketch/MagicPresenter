@@ -4,3 +4,6 @@ var pluginFolderPath = appSupportPath.stringByAppendingPathComponent("com.bohemi
 var pluginURL = NSURL.fileURLWithPath(pluginFolderPath)
 var output = sketchApp.delegate().runPluginCommandWithIdentifier_fromBundleAtURL('sketchtests',pluginURL)
 log(output);
+
+output = sketchApp.delegate().runPluginCommandWithIdentifier_fromBundleAtURL('test',pluginURL)
+log(output);

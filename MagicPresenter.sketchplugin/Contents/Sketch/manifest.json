@@ -15,6 +15,12 @@
       "name" : "SketchTests",
       "identifier" : "sketchtests"
     },
+    {
+      "script" : "test.js",
+      "handler" : "run",
+      "name" : "Tests",
+      "identifier" : "test"
+    },
   ],
   "menu" : {
     "title" : "Magic Presenter",

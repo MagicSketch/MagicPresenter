@@ -9,9 +9,10 @@ var present = function(context) {
     var object = cl.alloc().init()
     var artboards = Sketch.page(context).artboards()
     var slides = createSlides(artboards, context)
-    var index = 0
+    var current = context.selection.firstObject()
+    var index = indexOfArtboard(current, artboards)
     log(slides);
-    var success = object.launchWithSlides_atIndex_(slides, 0);
+    var success = object.launchWithSlides_atIndex_(slides, index);
     coscript.shouldKeepAround = true;
     NSThread.mainThread().threadDictionary().setObject_forKey_(object, "design.magicmirror.presentation");
     context.document.showMessage("Successfully Presents");
@@ -31,7 +32,6 @@ var myClass = function() {
 
 var createSlides = function(artboards, context) {
 
-    var slides = []
     var Slide = Class("Slide", NSObject, {
        "setArtboard":function(artboard) {
          this.artboard = artboard;
@@ -41,6 +41,7 @@ var createSlides = function(artboards, context) {
        },
     });
 
+    var slides = []
     for (var i = 0; i < artboards.count(); i++) {
       var artboard =  artboards[i];
       var slide = Slide.alloc().init()
@@ -49,4 +50,16 @@ var createSlides = function(artboards, context) {
     }
 
     return slides;
+}
+
+var indexOfArtboard = function(artboard, artboards) {
+  var index = -1;
+  for (var i = 0; i < artboards.count(); i++) {
+      var current = artboards[i]
+      if (artboard.objectID() == current.objectID()) {
+        index = i;
+        break;
+      }
+  }
+  return index;
 }
