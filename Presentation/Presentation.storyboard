@@ -3,13 +3,14 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Window Controller-->
         <scene sceneID="Rm8-LA-Hnl">
             <objects>
-                <windowController id="ZD3-Sm-dmc" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="qfs-GE-Zvk">
+                <windowController showSeguePresentationStyle="single" id="ZD3-Sm-dmc" sceneMemberID="viewController">
+                    <window key="window" title="Presentation" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="qfs-GE-Zvk">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
@@ -36,16 +37,47 @@
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="vbR-LW-liN"/>
                             </imageView>
+                            <button verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="EG1-gy-1fH">
+                                <rect key="frame" x="160" y="0.0" width="320" height="270"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" refusesFirstResponder="YES" transparent="YES" imageScaling="proportionallyDown" inset="2" id="gpd-HW-2Vu">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="rightSideButtonDidPress:" target="PW1-Ig-6sw" id="ZM5-Pp-lD7"/>
+                                    </connections>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="vJS-OK-F10">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="270"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" transparent="YES" imageScaling="proportionallyDown" inset="2" id="Tx6-ma-u1X">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="leftSideButtonDidPress:" target="PW1-Ig-6sw" id="1wx-aa-utS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="EG1-gy-1fH" firstAttribute="leading" secondItem="vJS-OK-F10" secondAttribute="trailing" id="2n4-bW-a8u"/>
                             <constraint firstAttribute="trailing" secondItem="5id-cN-OEn" secondAttribute="trailing" id="7rt-QA-e1b"/>
                             <constraint firstItem="5id-cN-OEn" firstAttribute="top" secondItem="OMR-Qt-p6i" secondAttribute="top" id="DO2-pW-PJx"/>
                             <constraint firstAttribute="bottom" secondItem="5id-cN-OEn" secondAttribute="bottom" id="FKy-HE-IkB"/>
+                            <constraint firstItem="EG1-gy-1fH" firstAttribute="width" secondItem="vJS-OK-F10" secondAttribute="width" multiplier="2" id="GLQ-35-jOB"/>
                             <constraint firstItem="5id-cN-OEn" firstAttribute="leading" secondItem="OMR-Qt-p6i" secondAttribute="leading" id="SRY-bJ-h6H"/>
+                            <constraint firstItem="vJS-OK-F10" firstAttribute="leading" secondItem="OMR-Qt-p6i" secondAttribute="leading" id="V0n-3t-KPL"/>
+                            <constraint firstAttribute="bottom" secondItem="vJS-OK-F10" secondAttribute="bottom" id="dAb-Us-f58"/>
+                            <constraint firstAttribute="bottom" secondItem="EG1-gy-1fH" secondAttribute="bottom" id="eZD-Cx-yEL"/>
+                            <constraint firstItem="EG1-gy-1fH" firstAttribute="top" secondItem="OMR-Qt-p6i" secondAttribute="top" id="kfp-24-xbu"/>
+                            <constraint firstAttribute="trailing" secondItem="EG1-gy-1fH" secondAttribute="trailing" id="kvl-B5-xbI"/>
+                            <constraint firstItem="vJS-OK-F10" firstAttribute="top" secondItem="OMR-Qt-p6i" secondAttribute="top" id="sqo-6q-scx"/>
+                            <constraint firstItem="EG1-gy-1fH" firstAttribute="leading" secondItem="vJS-OK-F10" secondAttribute="trailing" id="uJY-XG-tHZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="5id-cN-OEn" id="HIh-Yv-TmY"/>
+                        <outlet property="leftSideButton" destination="vJS-OK-F10" id="Tsw-FS-MZf"/>
+                        <outlet property="rightSideButton" destination="EG1-gy-1fH" id="cED-D7-ge9"/>
                     </connections>
                 </viewController>
                 <customObject id="oyj-Br-0A6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

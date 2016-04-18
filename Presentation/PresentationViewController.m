@@ -11,9 +11,10 @@
 @interface PresentationViewController ()
 
 @property (weak) IBOutlet NSImageView *imageView;
+@property (weak) IBOutlet NSButton *leftSideButton;
+@property (weak) IBOutlet NSButton *rightSideButton;
 @property (nonatomic, strong) NSArray *slides;
 @property (nonatomic, assign) NSInteger index;
-@property (nonatomic, strong) id monitor;
 @property (nonatomic, assign) CGSize size;
 
 @end
@@ -28,24 +29,16 @@
 //        [self.view.window toggleFullScreen:nil];
 //    });
 
-    __weak __typeof (self) weakSelf = self;
-    _monitor = [NSEvent addLocalMonitorForEventsMatchingMask:NSKeyDownMask
-                                                     handler:^NSEvent * _Nullable(NSEvent * _Nonnull event) {
-                                                         [weakSelf keyDown:event];
-                                                         return event;
-                                                     }];
-
     self.view.wantsLayer = YES;
     self.view.layer.backgroundColor = [NSColor blackColor].CGColor;
+
+    self.leftSideButton.focusRingType = NSFocusRingTypeNone;
+    self.rightSideButton.focusRingType = NSFocusRingTypeNone;
 }
 
 - (void)viewWillAppear {
     [super viewWillAppear];
     [self centerWindow];
-}
-
-- (void)dealloc {
-    [NSEvent removeMonitor:_monitor];
 }
 
 - (void)reloadData {
@@ -68,6 +61,7 @@
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
+    NSLog(@"keyDown %@", theEvent);
     switch (theEvent.keyCode) {
         case 126: // Up
         case 123: // Left
@@ -94,6 +88,16 @@
         _index--;
         [self reloadData];
     }
+}
+
+#pragma mark Actions
+
+- (IBAction)leftSideButtonDidPress:(id)sender {
+    [self goPreviousPage];
+}
+
+- (IBAction)rightSideButtonDidPress:(id)sender {
+    [self goNextPage];
 }
 
 @end
