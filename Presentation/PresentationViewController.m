@@ -7,6 +7,7 @@
 //
 
 #import "PresentationViewController.h"
+#import "NSWindow+FullScreenMode.h"
 
 @interface PresentationViewController ()
 
@@ -70,6 +71,16 @@
         case 125: // Down
         case 124: // Right
             [self goNextPage];
+            break;
+        case 53: // Esc
+            if ([self.view.window mn_isFullScreen]) {
+                [self.view.window toggleFullScreen:nil];
+            }
+            break;
+        case 36: // Enter
+            if ((theEvent.modifierFlags & NSCommandKeyMask) == NSCommandKeyMask) {
+                [self.view.window toggleFullScreen:nil];
+            }
             break;
         default:
             break;

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A74A55C1CC7E0CD00404E28 /* NSWindow+FullScreenMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A74A55A1CC7E0CD00404E28 /* NSWindow+FullScreenMode.h */; };
+		1A74A55D1CC7E0CD00404E28 /* NSWindow+FullScreenMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A74A55B1CC7E0CD00404E28 /* NSWindow+FullScreenMode.m */; };
 		1A8166FE1CC5311F00D70CBE /* PresentationWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A8166FC1CC5311F00D70CBE /* PresentationWindowController.h */; };
 		1A8166FF1CC5311F00D70CBE /* PresentationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8166FD1CC5311F00D70CBE /* PresentationWindowController.m */; };
 		1A8167021CC5321800D70CBE /* PresentationWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A8167001CC5321800D70CBE /* PresentationWindow.h */; };
@@ -47,6 +49,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A74A55A1CC7E0CD00404E28 /* NSWindow+FullScreenMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+FullScreenMode.h"; sourceTree = "<group>"; };
+		1A74A55B1CC7E0CD00404E28 /* NSWindow+FullScreenMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+FullScreenMode.m"; sourceTree = "<group>"; };
 		1A8166FC1CC5311F00D70CBE /* PresentationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationWindowController.h; sourceTree = "<group>"; };
 		1A8166FD1CC5311F00D70CBE /* PresentationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationWindowController.m; sourceTree = "<group>"; };
 		1A8167001CC5321800D70CBE /* PresentationWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationWindow.h; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				1A8167001CC5321800D70CBE /* PresentationWindow.h */,
 				1A8167011CC5321800D70CBE /* PresentationWindow.m */,
 				1AB82C1B1CC40BEC00E348D4 /* Slide.h */,
+				1A74A55A1CC7E0CD00404E28 /* NSWindow+FullScreenMode.h */,
+				1A74A55B1CC7E0CD00404E28 /* NSWindow+FullScreenMode.m */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -142,6 +148,7 @@
 				1AB82C1F1CC40BEC00E348D4 /* PresentationViewController.h in Headers */,
 				1AB82C211CC40BEC00E348D4 /* Slide.h in Headers */,
 				1A8167021CC5321800D70CBE /* PresentationWindow.h in Headers */,
+				1A74A55C1CC7E0CD00404E28 /* NSWindow+FullScreenMode.h in Headers */,
 				1AB82C001CC40BDD00E348D4 /* Presentation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A74A55D1CC7E0CD00404E28 /* NSWindow+FullScreenMode.m in Sources */,
 				1AB82C201CC40BEC00E348D4 /* PresentationViewController.m in Sources */,
 				1A8166FF1CC5311F00D70CBE /* PresentationWindowController.m in Sources */,
 				1AB82C1D1CC40BEC00E348D4 /* PresentationController.m in Sources */,
