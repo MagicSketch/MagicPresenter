@@ -9,9 +9,8 @@ var present = function(context) {
     var object = cl.alloc().init()
     var artboards = Sketch.page(context).artboards()
     var slides = createSlides(artboards, context)
-    var current = context.selection.firstObject()
+    var current = representingArtboard(context.selection.firstObject()) || artboards.lastObject()
     var index = indexOfArtboard(current, artboards)
-    log(slides);
     var success = object.launchWithSlides_atIndex_(slides, index);
     coscript.shouldKeepAround = true;
     NSThread.mainThread().threadDictionary().setObject_forKey_(object, "design.magicmirror.presentation");
@@ -62,4 +61,11 @@ var indexOfArtboard = function(artboard, artboards) {
       }
   }
   return index;
+}
+
+var representingArtboard = function(selected) {
+  if (selected && selected.isKindOfClass([MSLayer class])) {
+    selected = selected.parentArtboard();
+  }
+  return selected
 }
