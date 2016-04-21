@@ -75,6 +75,8 @@
         case 53: // Esc
             if ([self.view.window mn_isFullScreen]) {
                 [self.view.window toggleFullScreen:nil];
+            } else {
+                [self.view.window close];
             }
             break;
         case 36: // Enter
