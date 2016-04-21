@@ -3,15 +3,11 @@
 var Sketch = {}
 
 Sketch.page = function(context) {
-  _page = context.document.currentPage()
+  var _page = context.document.currentPage()
   this.artboards = function() {
       return _page.artboards();
   }
   return this;
-}
-
-Sketch.indexOf = function(object, array) {
-  
 }
 
 Sketch.flattener = function(context) {
@@ -185,4 +181,13 @@ Sketch.delegate = function() {
 Sketch.context = function() {
   var controller = Sketch.delegate()
   return controller.pluginContext();
+}
+
+Sketch.selection = function(context) {
+  _context = context;
+  this.setSelectedLayer = function(layer) {
+    var layers = [NSArray arrayWithObject:layer]
+    _context.document.setSelectedLayers(layers)
+  }
+  return this;
 }

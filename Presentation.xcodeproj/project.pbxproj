@@ -259,7 +259,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd ~/Projects/MagicPresenter/\n./install.sh";
+			shellScript = "cd ~/Projects/MagicPresenter/\n#./install.sh\nkillall Sketch\nkillall Sketch\\ Beta\n./test.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 
