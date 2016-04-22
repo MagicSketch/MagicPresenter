@@ -12,4 +12,4 @@ $.ui = {
   "splitView" : function() {
     return this.splitViewController().splitView();
   },
-}
+};

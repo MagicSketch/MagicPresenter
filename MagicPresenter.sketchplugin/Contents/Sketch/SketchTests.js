@@ -1,4 +1,6 @@
+/* jshint ignore:start */
 @import "Sketch.js"
+/* jshint ignore:end */
 
 // log("Please use `coscript RunSketchTests.js`")
 
@@ -9,8 +11,8 @@ function run(context) {
   testOpenFile(context);
   var mslayer = testAutoSelectLayer(context);
   testHasFlattener(context);
-  var layer = testWrappingLayer(mslayer)
-  var image = testExportLayerToImage(context, layer)
+  var layer = testWrappingLayer(mslayer);
+  var image = testExportLayerToImage(context, layer);
   testGetAllArtboardsInPage(context);
 }
 
@@ -25,21 +27,21 @@ function run(context) {
 // }
 
 function testOpenFile(context) {
-  var controller = [NSApp delegate]
-  var path = NSURL.URLWithString("/Users/james/Projects/MagicPresenter/MagicPresenter.sketch")
-  controller.openTemplateAtPath(path)
+  var controller = [NSApp delegate]; // jshint ignore:line
+  var path = NSURL.URLWithString("/Users/james/Projects/MagicPresenter/MagicPresenter.sketch");
+  controller.openTemplateAtPath(path);
 }
 
 function testAutoSelectLayer(context) {
-    var artboards = Sketch.page(context).artboards()
-    var firstLayer = artboards.firstObject()
+    var artboards = Sketch.page(context).artboards();
+    var firstLayer = artboards.firstObject();
     var isSelectionFirstLayer = false;
     if (artboards.count() > 0) {
-      Sketch.selection(context).setSelectedLayer(firstLayer)
+      Sketch.selection(context).setSelectedLayer(firstLayer);
     } else {
       assertTrue("No Artboards for selection", false);
     }
-    return firstLayer
+    return firstLayer;
 }
 //
 // function testHasSelectedAnArtboardBeforeContinueTesting(context) {
@@ -50,23 +52,23 @@ function testAutoSelectLayer(context) {
 // }
 
 function testHasFlattener(context) {
-  var flattener = Sketch.flattener(context)
-  assertNotNil("TestHasFlattener", flattener)
+  var flattener = Sketch.flattener(context);
+  assertNotNil("TestHasFlattener", flattener);
 }
 
 function testWrappingLayer(mslayer) {
-  var layer = Sketch.layer(mslayer)
-  assertNotNil("TestWrappingLayer", layer)
+  var layer = Sketch.layer(mslayer);
+  assertNotNil("TestWrappingLayer", layer);
   return layer;
 }
 
 function testExportLayerToImage(context, layer) {
   var image = layer.exportedImage(context, 2);
-  assertNotNil("TestExportLayerToImage", image)
-  return image
+  assertNotNil("TestExportLayerToImage", image);
+  return image;
 }
 
 function testGetAllArtboardsInPage(context) {
-  var artboards = Sketch.page(context).artboards()
-  assertTrue("Artboards Count > 0", artboards != null && artboards.count())
+  var artboards = Sketch.page(context).artboards();
+  assertTrue("Artboards Count > 0", artboards !== null && artboards.count());
 }
