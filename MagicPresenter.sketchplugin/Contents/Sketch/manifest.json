@@ -1,5 +1,5 @@
 {
-  "build" : "1",
+  "build" : "2",
   "author" : "James Tang",
   "commands" : [
     {
@@ -30,7 +30,7 @@
     ]
   },
   "identifier" : "design.magicmirror.presenter",
-  "version" : "1.0",
+  "version" : "0.1.1",
   "description" : "Present Your Deck/Slides in Sketch",
   "email" : "james@magicmirror.design",
   "name" : "Magic Presenter",
