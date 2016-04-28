@@ -23,11 +23,12 @@
     // Put setup code here. This method is called before the invocation of each test method in the class.
 
 
-    _trackingRequest = [SegmentIOTracker trackingRequestWithWriteKey:@"abc123"
-                                                              userID:@"james"
-                                                          properties:@{
-                                                                       @"event": @"unit testing",
-                                                                       }];
+    _trackingRequest = [SegmentIOTracker trackingRequestWithEvent:@"test"
+                                                         writeKey:@"abc123"
+                                                           userID:@"james"
+                                                       properties:@{
+                                                                    @"event": @"unit testing",
+                                                                    }];
 
 }
 
@@ -69,7 +70,8 @@
     XCTAssertNil(error);
     XCTAssertEqualObjects(dictionary[@"userId"], @"james");
     XCTAssertEqualObjects(dictionary[@"properties"], @{@"event": @"unit testing"});
-    XCTAssertEqual([[dictionary allKeys] count], 2);
+    XCTAssertEqualObjects(dictionary[@"event"], @"test");
+    XCTAssertEqual([[dictionary allKeys] count], 3);
 }
 
 - (void)testSendTracking {

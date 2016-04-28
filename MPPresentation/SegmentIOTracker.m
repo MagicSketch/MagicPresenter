@@ -25,11 +25,13 @@
 }
 
 - (void)track:(NSString *)event properties:(NSDictionary *)properties {
-    NSURLRequest *request = [[self class] trackingRequestWithWriteKey:self.writeKey
-                                                               userID:self.uuid
-                                                           properties:properties];
+    NSURLRequest *request = [[self class] trackingRequestWithEvent:event
+                                                          writeKey:self.writeKey
+                                                            userID:self.uuid
+                                                        properties:properties];
     [[self class] sendRequest:request completion:^(NSDictionary *response, NSError *error) {
 
+        NSLog(@"Segment: response %@ error %@", response, error);
     }];
 }
 
@@ -37,7 +39,7 @@
     return [[NSString stringWithFormat:@"%@:%@", username ?: @"", password ?: @""] base64String];
 }
 
-+ (NSMutableURLRequest *)trackingRequestWithWriteKey:(NSString *)key userID:(NSString *)userID properties:(NSDictionary *)properties {
++ (NSMutableURLRequest *)trackingRequestWithEvent:(NSString *)event writeKey:(NSString *)key userID:(NSString *)userID properties:(NSDictionary *)properties {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://api.segment.io/v1/track"]];
     request.HTTPMethod = @"POST";
     NSString *base64 = [[self class] basicAuthValueForUsername:key password:nil];
@@ -50,6 +52,10 @@
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     if (properties) {
         [dict addEntriesFromDictionary:@{@"properties": properties}];
+    }
+    NSAssert(event, nil);
+    if (event) {
+        [dict addEntriesFromDictionary:@{@"event":event}];
     }
     NSAssert(userID, nil);
     if (userID) {

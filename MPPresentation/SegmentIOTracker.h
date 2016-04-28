@@ -17,9 +17,10 @@ typedef void(^SegmentIOTrackerRequestCompletion)(NSDictionary *response, NSError
 
 - (id)initWithWriteKey:(NSString *)writeKey;
 + (NSString *)basicAuthValueForUsername:(NSString *)username password:(NSString *)password;
-+ (NSMutableURLRequest *)trackingRequestWithWriteKey:(NSString *)key
-                                              userID:(NSString *)userID
-                                          properties:(NSDictionary *)properties;
++ (NSMutableURLRequest *)trackingRequestWithEvent:(NSString *)event
+                                         writeKey:(NSString *)key
+                                           userID:(NSString *)userID
+                                       properties:(NSDictionary *)properties;
 + (void)sendRequest:(NSURLRequest *)request completion:(SegmentIOTrackerRequestCompletion)completion;
 
 @end
