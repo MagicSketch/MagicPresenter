@@ -13,8 +13,9 @@ typedef void(^SegmentIOTrackerRequestCompletion)(NSDictionary *response, NSError
 
 @interface SegmentIOTracker : Tracker
 
-@property (nonatomic, copy) NSString *writeKey;
+@property (nonatomic, copy, readonly) NSString *writeKey;
 
+- (id)initWithWriteKey:(NSString *)writeKey;
 + (NSString *)basicAuthValueForUsername:(NSString *)username password:(NSString *)password;
 + (NSMutableURLRequest *)trackingRequestWithWriteKey:(NSString *)key
                                               userID:(NSString *)userID

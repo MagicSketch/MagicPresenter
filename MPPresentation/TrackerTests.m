@@ -35,7 +35,7 @@
   self.counter = [[CounterTracker alloc] init];
   self.mocked = [[MockedTracker alloc] init];
   self.persister = [[NSMutableDictionary alloc] init];
-  self.tracker = [[TrackerManager alloc] initWithTrackers:@[_counter, _mocked] persister:_persister];
+  self.tracker = [[TrackerManager alloc] initWithTrackers:@[_counter, _mocked] persister:_persister identifier:@"test"];
 }
 
 - (void)tearDown {
@@ -70,14 +70,14 @@
 }
 
 - (void)testUUIDHasPersistedAcrossPersister {
-  TrackerManager *another = [[TrackerManager alloc] initWithTrackers:nil persister:self.persister];
+  TrackerManager *another = [[TrackerManager alloc] initWithTrackers:nil persister:self.persister identifier:@"test"];
   XCTAssertEqualObjects(another.uuid, self.tracker.uuid);
 }
 
 - (void)testUUIDHasPersisted {
-  TrackerManager *first = [[TrackerManager alloc] initWithTrackers:nil];
+  TrackerManager *first = [[TrackerManager alloc] initWithTrackers:nil identifier:@"test"];
   XCTAssertNotNil(first.uuid);
-  TrackerManager *second = [[TrackerManager alloc] initWithTrackers:nil];
+  TrackerManager *second = [[TrackerManager alloc] initWithTrackers:nil identifier:@"test"];
   XCTAssertEqualObjects(second.uuid, first.uuid);
 }
 

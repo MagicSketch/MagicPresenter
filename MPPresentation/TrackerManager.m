@@ -16,6 +16,7 @@ NSString *const TrackerManagerEventSessionEnded = @"Session Ended";
 @interface TrackerManager ()
 
 @property (nonatomic, strong) NSMutableArray <id <Tracker>> *trackers;
+@property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, strong) id <TrackerPersister> persister;
 
 @end
@@ -28,7 +29,7 @@ static TrackerManager *_tracker;
   if ( ! _tracker) {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-      _tracker = [[TrackerManager alloc] initWithTrackers:@[]];
+      _tracker = [[TrackerManager alloc] initWithTrackers:@[] identifier:nil];
     });
   }
   return _tracker;
@@ -51,27 +52,29 @@ static TrackerManager *_tracker;
   }
 }
 
-- (instancetype)initWithTrackers:(NSArray <id <Tracker>> *)trackers {
+- (instancetype)initWithTrackers:(NSArray <id <Tracker>> *)trackers identifier:(NSString *)identifier {
   TrackerPersister *persister = [[TrackerPersister alloc] init];
-  self = [self initWithTrackers:trackers persister:persister];
+  self = [self initWithTrackers:trackers persister:persister identifier:identifier];
   if (self) {
+      _identifier = [identifier copy];
   }
   return self;
 }
 
-- (instancetype)initWithTrackers:(NSArray <id <Tracker>> *)trackers persister:(id<TrackerPersister>)persister {
+- (instancetype)initWithTrackers:(NSArray <id <Tracker>> *)trackers persister:(id<TrackerPersister>)persister identifier:(NSString *)identifier {
   self = [super init];
   if (self) {
     _persister = persister;
+    _identifier = [identifier copy];
 
-    NSString *uuid = [persister objectForKey:@"io.magicsketch.tracker.uuid"];
+    NSString *uuid = [persister objectForKey:[_identifier stringByAppendingPathExtension:@"uuid"]];
     if ( ! uuid) {
       uuid = [[NSUUID UUID] UUIDString];
-      [persister setObject:uuid forKey:@"io.magicsketch.tracker.uuid"];
+      [persister setObject:uuid forKey:[_identifier stringByAppendingPathExtension:@"uuid"]];
     }
     self.uuid = uuid;
 
-    NSString *email = [persister objectForKey:@"io.magicsketch.tracker.email"];
+    NSString *email = [persister objectForKey:[_identifier stringByAppendingPathExtension:@"email"]];
     self.email = email;
 
     _trackers = [NSMutableArray array];

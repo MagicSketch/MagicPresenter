@@ -11,9 +11,18 @@
 
 @interface SegmentIOTracker ()
 
+@property (nonatomic, copy) NSString *writeKey;
+
 @end
 
 @implementation SegmentIOTracker
+
+- (id)initWithWriteKey:(NSString *)writeKey {
+    if (self = [super init]) {
+        _writeKey = [writeKey copy];
+    }
+    return self;
+}
 
 - (void)track:(NSString *)event properties:(NSDictionary *)properties {
     NSURLRequest *request = [[self class] trackingRequestWithWriteKey:self.writeKey
@@ -31,15 +40,24 @@
 + (NSMutableURLRequest *)trackingRequestWithWriteKey:(NSString *)key userID:(NSString *)userID properties:(NSDictionary *)properties {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://api.segment.io/v1/track"]];
     request.HTTPMethod = @"POST";
-    [request setValue:[@"Basic " stringByAppendingString:[[self class] basicAuthValueForUsername:key
-                                                                                        password:nil]] forHTTPHeaderField:@"Authorization"];
+    NSString *base64 = [[self class] basicAuthValueForUsername:key password:nil];
+
+    NSAssert(base64, nil);
+    [request setValue:[@"Basic " stringByAppendingString:base64] forHTTPHeaderField:@"Authorization"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
 
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-    [dict addEntriesFromDictionary:@{@"properties": properties}];
-    [dict addEntriesFromDictionary:@{@"userId":userID}];
-    NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:0
+    NSAssert(properties, nil);
+    if (properties) {
+        [dict addEntriesFromDictionary:@{@"properties": properties}];
+    }
+    NSAssert(userID, nil);
+    if (userID) {
+        [dict addEntriesFromDictionary:@{@"userId":userID}];
+    }
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dict
+                                                   options:0
                                                      error:nil];
     [request setHTTPBody:data];
     return request;

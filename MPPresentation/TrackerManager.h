@@ -19,8 +19,8 @@ extern NSString *const TrackerManagerEventSessionEnded;
 @property (nonatomic, strong, readonly) id <TrackerPersister> persister; // Default is TrackerPersister
 
 + (instancetype)sharedInstance;
-- (instancetype)initWithTrackers:(NSArray <id <Tracker>> *)trackers persister:(id <TrackerPersister>)persister;
-- (instancetype)initWithTrackers:(NSArray <id <Tracker>> *)trackers;
+- (instancetype)initWithTrackers:(NSArray <id <Tracker>> *)trackers persister:(id <TrackerPersister>)persister identifier:(NSString *)identifier;
+- (instancetype)initWithTrackers:(NSArray <id <Tracker>> *)trackers identifier:(NSString *)identifier;
 - (void)setAsSharedInstance;
 - (NSArray <id <Tracker>> *)allTrackers;
 
