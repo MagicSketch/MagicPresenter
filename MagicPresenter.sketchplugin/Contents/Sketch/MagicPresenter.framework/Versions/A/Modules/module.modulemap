@@ -1,0 +1,6 @@
+framework module MagicPresenter {
+  umbrella header "MagicPresenter.h"
+
+  export *
+  module * { export * }
+}

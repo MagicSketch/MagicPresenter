@@ -15,19 +15,19 @@ var present = function(context) {
     var index = indexOfArtboard(current, artboards);
     var success = object.launchWithSlides_atIndex_(slides, index);
     coscript.shouldKeepAround = true;
-    NSThread.mainThread().threadDictionary().setObject_forKey_(object, "design.magicmirror.presentation");
+    NSThread.mainThread().threadDictionary().setObject_forKey_(object, "io.magicsketch.presenter");
     context.document.showMessage("Successfully Presents");
 };
 
 
 
 var load = function() {
-    var loaded = Sketch.loadFramework("Presentation", "/Contents/Sketch");
+    var loaded = Sketch.loadFramework("MagicPresenter", "/Contents/Sketch");
     return loaded;
 };
 
 var myClass = function() {
-  var my = NSClassFromString("PresentationController");
+  var my = NSClassFromString("MPPresentationController");
   return my;
 };
 

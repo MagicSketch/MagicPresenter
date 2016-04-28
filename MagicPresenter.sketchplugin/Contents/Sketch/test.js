@@ -28,7 +28,7 @@ var testInitializeClass = function() {
 
 var testRespondsToLaunchWithSlides = function() {
   var cl = myClass();
-  var responds = PresentationController.instancesRespondToSelector("launchWithSlides:atIndex:");
+  var responds = MPPresentationController.instancesRespondToSelector("launchWithSlides:atIndex:");
   assertTrue("InstancesResponds to launchWithSlides:atIndex:", responds);
 };
 
