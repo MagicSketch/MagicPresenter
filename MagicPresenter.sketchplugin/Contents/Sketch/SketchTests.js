@@ -27,9 +27,12 @@ function run(context) {
 // }
 
 function testOpenFile(context) {
-  var controller = [NSApp delegate]; // jshint ignore:line
-  var path = NSURL.URLWithString("/Users/james/Projects/MagicPresenter/MagicPresenter.sketch");
-  controller.openTemplateAtPath(path);
+  var path = "/Users/james/Projects/MagicPresenter/MagicPresenter.sketch";
+  var url = NSURL.URLWithString(path);
+  var app = Sketch.env().name();
+  /* jshint ignore:start */
+  [[NSWorkspace sharedWorkspace] openFile:path withApplication:app];
+  /* jshint ignore:end */
 }
 
 function testAutoSelectLayer(context) {

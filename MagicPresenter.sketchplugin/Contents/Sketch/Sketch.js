@@ -4,6 +4,21 @@
 
 var Sketch = {};
 
+Sketch.env = function() {
+  /* jshint ignore:start */
+  this.name = function() {
+    // var bundle = [NSBundle bundleForClass:NSClassFromString("AppController")];
+    // var bundleIdentifier = [bundle bundleIdentifier];
+    // var path = [[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:bundleIdentifier];
+    //
+    // var appName = [[path lastPathComponent] stringByDeletingPathExtension];
+    // return appName;
+    return "Sketch Beta"
+  };
+  /* jshint ignore:end */
+  return this;
+};
+
 Sketch.page = function(context) {
   var _page = context.document.currentPage();
   this.artboards = function() {
