@@ -48,7 +48,6 @@
     [request setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
 
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-    NSAssert(properties, nil);
     if (properties) {
         [dict addEntriesFromDictionary:@{@"properties": properties}];
     }
