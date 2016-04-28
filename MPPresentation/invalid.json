@@ -1,0 +1,18 @@
+ [
+  {
+  "weight": 300,
+  "name": "normal",
+  "variables":{
+  "enableMixpanel":false,
+  "enableKeen":false,
+  },
+  },
+  {
+  "weight": 1,
+  "name": "lucky",
+  "variables":{
+  "enableMixpanel":true,
+  "enableKeen":true,
+  },
+  },
+//]
