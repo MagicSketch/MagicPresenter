@@ -98,9 +98,9 @@
     XCTAssertNotNil([_body valueForKeyPath:@"context.app"]);
     NSString *version = @"1.0";
     NSString *build = @"1";
-    XCTAssertEqualObjects([_body valueForKeyPath:@"app.version"], version);
-    XCTAssertEqualObjects([_body valueForKeyPath:@"app.build"], build);
-    XCTAssertEqualObjects([_body valueForKeyPath:@"app.name"], @"MagicPresenter");
+    XCTAssertEqualObjects([_body valueForKeyPath:@"context.app.version"], version);
+    XCTAssertEqualObjects([_body valueForKeyPath:@"context.app.build"], build);
+    XCTAssertEqualObjects([[_body valueForKeyPath:@"context.app.name"] isKindOfClass:[NSString class]]);
 }
 
 - (void)testDevice {
