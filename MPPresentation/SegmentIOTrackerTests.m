@@ -100,7 +100,7 @@
     NSString *build = @"1";
     XCTAssertEqualObjects([_body valueForKeyPath:@"context.app.version"], version);
     XCTAssertEqualObjects([_body valueForKeyPath:@"context.app.build"], build);
-    XCTAssertEqualObjects([[_body valueForKeyPath:@"context.app.name"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.app.name"] isKindOfClass:[NSString class]]);
 }
 
 - (void)testDevice {
