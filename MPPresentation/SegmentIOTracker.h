@@ -16,11 +16,19 @@ typedef void(^SegmentIOTrackerRequestCompletion)(NSDictionary *response, NSError
 @property (nonatomic, copy, readonly) NSString *writeKey;
 
 - (id)initWithWriteKey:(NSString *)writeKey;
+
+@end
+
+
+@interface SegmentIOTracker (Internal)
+
+// For Internals, exposed for Testing
 + (NSString *)basicAuthValueForUsername:(NSString *)username password:(NSString *)password;
 + (NSMutableURLRequest *)trackingRequestWithEvent:(NSString *)event
                                          writeKey:(NSString *)key
                                            userID:(NSString *)userID
                                        properties:(NSDictionary *)properties;
 + (void)sendRequest:(NSURLRequest *)request completion:(SegmentIOTrackerRequestCompletion)completion;
++ (NSDictionary *)bodyForRequest:(NSURLRequest *)request;
 
 @end

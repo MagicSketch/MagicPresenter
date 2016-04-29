@@ -35,6 +35,11 @@
     }];
 }
 
+
+@end
+
+@implementation SegmentIOTracker (Internal)
+
 + (NSString *)basicAuthValueForUsername:(NSString *)username password:(NSString *)password {
     return [[NSString stringWithFormat:@"%@:%@", username ?: @"", password ?: @""] base64String];
 }
@@ -53,11 +58,11 @@
     if (properties) {
         [dict addEntriesFromDictionary:@{@"properties": properties}];
     }
-    NSAssert(event, nil);
+    NSAssert(event, @"event should not be nil");
     if (event) {
         [dict addEntriesFromDictionary:@{@"event":event}];
     }
-    NSAssert(userID, nil);
+    NSAssert(userID, @"userID should not be nil");
     if (userID) {
         [dict addEntriesFromDictionary:@{@"userId":userID}];
     }
@@ -82,6 +87,14 @@
 
                                     }];
     [task resume];
+}
+
++ (NSDictionary *)bodyForRequest:(NSURLRequest *)request {
+    NSError *error;
+    NSDictionary *expected = [NSJSONSerialization JSONObjectWithData:request.HTTPBody
+                                                               options:0
+                                                               error:&error];
+    return expected;
 }
 
 @end

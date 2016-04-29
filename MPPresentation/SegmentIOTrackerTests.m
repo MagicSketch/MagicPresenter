@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) SegmentIOTracker *tracker;
 @property (nonatomic, strong) NSMutableURLRequest *trackingRequest;
+@property (nonatomic, strong) NSDictionary *body;
 
 @end
 
@@ -29,7 +30,7 @@
                                                        properties:@{
                                                                     @"event": @"unit testing",
                                                                     }];
-
+    _body = [SegmentIOTracker bodyForRequest:_trackingRequest];
 }
 
 - (void)tearDown {
@@ -64,14 +65,19 @@
 
 - (void)testBody {
     NSError *error;
-    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:_trackingRequest.HTTPBody
+    NSDictionary *expected = [NSJSONSerialization JSONObjectWithData:_trackingRequest.HTTPBody
                                                                options:0
                                                                  error:&error];
     XCTAssertNil(error);
-    XCTAssertEqualObjects(dictionary[@"userId"], @"james");
-    XCTAssertEqualObjects(dictionary[@"properties"], @{@"event": @"unit testing"});
-    XCTAssertEqualObjects(dictionary[@"event"], @"test");
-    XCTAssertEqual([[dictionary allKeys] count], 3);
+    XCTAssertEqualObjects(_body, expected);
+}
+
+- (void)testBodyGeneral {
+    NSDictionary *body = _body;
+    XCTAssertEqualObjects(body[@"userId"], @"james");
+    XCTAssertEqualObjects(body[@"properties"], @{@"event": @"unit testing"});
+    XCTAssertEqualObjects(body[@"event"], @"test");
+    XCTAssertEqual([[body allKeys] count], 3);
 }
 
 - (void)testSendTracking {
@@ -82,6 +88,79 @@
                           [expectation fulfill];
                       }];
     [self waitForExpectationsWithTimeout:3 handler:nil];
+}
+
+// Make sure segment logged this events
+// https://segment.com/docs/spec/common/
+// https://github.com/segmentio/analytics-ios/blob/2901a369dce826cd7404af95437e3f0f42e96588/Pod/Classes/Internal/SEGSegmentIntegration.m
+
+- (void)testApp {
+    XCTAssertNotNil(_body[@"app"]);
+    NSString *version = @"1.0";
+    NSString *build = @"1";
+    XCTAssertEqualObjects([_body valueForKeyPath:@"app.version"], version);
+    XCTAssertEqualObjects([_body valueForKeyPath:@"app.build"], build);
+    XCTAssertEqualObjects([_body valueForKeyPath:@"app.name"], @"MagicPresenter");
+}
+
+- (void)testDevice {
+    XCTAssertNotNil(_body[@"device"]);
+    XCTAssertTrue([[_body valueForKeyPath:@"device.id"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"device.type"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"device.name"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"device.modal"] isKindOfClass:[NSString class]]);
+}
+
+- (void)testIP {
+    XCTAssertTrue([[_body valueForKeyPath:@"ip"] isKindOfClass:[NSString class]]);
+}
+
+- (void)testLibrary {
+    XCTAssertNotNil(_body[@"library"]);
+    XCTAssertTrue([[_body valueForKeyPath:@"library.name"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"library.version"] isKindOfClass:[NSString class]]);
+}
+
+- (void)testLocale {
+    XCTAssertTrue([_body[@"locale"] isKindOfClass:[NSString class]]);
+}
+
+- (void)testLocation {
+    XCTAssertNotNil(_body[@"location"]);
+    XCTAssertTrue([[_body valueForKeyPath:@"location.city"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"location.country"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"location.latitude"] isKindOfClass:[NSNumber class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"location.longitude"] isKindOfClass:[NSNumber class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"location.speed"] isKindOfClass:[NSNumber class]]);
+}
+
+- (void)testNetwork {
+    XCTAssertNotNil(_body[@"network"]);
+    XCTAssertTrue([[_body valueForKeyPath:@"network.bluetooth"] isKindOfClass:[NSNumber class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"network.carrier"] isKindOfClass:[NSNumber class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"network.celluar"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"network.wifi"] isKindOfClass:[NSNumber class]]);
+}
+
+- (void)testOS {
+    XCTAssertNotNil(_body[@"os"]);
+    XCTAssertTrue([[_body valueForKeyPath:@"os.name"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"os.version"] isKindOfClass:[NSString class]]);
+}
+
+- (void)testReferrer {
+    XCTAssertNotNil(_body[@"referrer"]);
+    XCTAssertTrue([_body[@"referrer.type"] isKindOfClass:[NSString class]], @"%@ should be string", _body[@"referrer.type"]);
+}
+
+- (void)testScreen {
+    XCTAssertNotNil(_body[@"screen"]);
+    XCTAssertTrue([_body[@"screen.width"] isKindOfClass:[NSNumber class]]);
+    XCTAssertTrue([_body[@"screen.height"] isKindOfClass:[NSNumber class]]);
+}
+
+- (void)testTimeZone {
+    XCTAssertTrue([_body[@"timezone"] isKindOfClass:[NSString class]]);
 }
 
 @end
