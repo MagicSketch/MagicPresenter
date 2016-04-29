@@ -8,6 +8,7 @@
 
 #import "SegmentIOTracker.h"
 #import "NSString+MD5.h"
+#import <AppKit/AppKit.h>
 
 @interface SegmentIOTracker ()
 
@@ -66,6 +67,27 @@
     if (userID) {
         [dict addEntriesFromDictionary:@{@"userId":userID}];
     }
+
+    {
+        NSMutableDictionary *context = [[NSMutableDictionary alloc] init];
+        [context addEntriesFromDictionary:@{
+                                            @"locale":[NSString stringWithFormat:
+                                                       @"%@-%@",
+                                                       [NSLocale.currentLocale objectForKey:NSLocaleLanguageCode],
+                                                       [NSLocale.currentLocale objectForKey:NSLocaleCountryCode]]
+                                            }];
+        [context addEntriesFromDictionary:@{ @"timezone":[[NSTimeZone localTimeZone] name] }];
+        
+        CGRect screen = [[NSScreen mainScreen] frame];
+        [context addEntriesFromDictionary:@{ @"screen": @{
+                                                  @"width":@(screen.size.width),
+                                                  @"height":@(screen.size.height),
+                                                  @"density":@([[NSScreen mainScreen] backingScaleFactor])
+                                                  }}];
+        [dict addEntriesFromDictionary:@{ @"context": context }];
+    }
+
+
     NSData *data = [NSJSONSerialization dataWithJSONObject:dict
                                                    options:0
                                                      error:nil];

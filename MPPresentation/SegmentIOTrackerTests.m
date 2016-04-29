@@ -95,7 +95,7 @@
 // https://github.com/segmentio/analytics-ios/blob/2901a369dce826cd7404af95437e3f0f42e96588/Pod/Classes/Internal/SEGSegmentIntegration.m
 
 - (void)testApp {
-    XCTAssertNotNil(_body[@"app"]);
+    XCTAssertNotNil([_body valueForKeyPath:@"context.app"]);
     NSString *version = @"1.0";
     NSString *build = @"1";
     XCTAssertEqualObjects([_body valueForKeyPath:@"app.version"], version);
@@ -104,63 +104,64 @@
 }
 
 - (void)testDevice {
-    XCTAssertNotNil(_body[@"device"]);
-    XCTAssertTrue([[_body valueForKeyPath:@"device.id"] isKindOfClass:[NSString class]]);
-    XCTAssertTrue([[_body valueForKeyPath:@"device.type"] isKindOfClass:[NSString class]]);
-    XCTAssertTrue([[_body valueForKeyPath:@"device.name"] isKindOfClass:[NSString class]]);
-    XCTAssertTrue([[_body valueForKeyPath:@"device.modal"] isKindOfClass:[NSString class]]);
+    XCTAssertNotNil([_body valueForKeyPath:@"context.device"]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.device.id"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.device.type"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.device.name"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.device.modal"] isKindOfClass:[NSString class]]);
 }
 
 - (void)testIP {
-    XCTAssertTrue([[_body valueForKeyPath:@"ip"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.ip"] isKindOfClass:[NSString class]]);
 }
 
 - (void)testLibrary {
-    XCTAssertNotNil(_body[@"library"]);
-    XCTAssertTrue([[_body valueForKeyPath:@"library.name"] isKindOfClass:[NSString class]]);
-    XCTAssertTrue([[_body valueForKeyPath:@"library.version"] isKindOfClass:[NSString class]]);
+    XCTAssertNotNil([_body valueForKeyPath:@"context.library"]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.library.name"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.library.version"] isKindOfClass:[NSString class]]);
 }
 
 - (void)testLocale {
-    XCTAssertTrue([_body[@"locale"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.locale"] isKindOfClass:[NSString class]]);
 }
 
 - (void)testLocation {
-    XCTAssertNotNil(_body[@"location"]);
-    XCTAssertTrue([[_body valueForKeyPath:@"location.city"] isKindOfClass:[NSString class]]);
-    XCTAssertTrue([[_body valueForKeyPath:@"location.country"] isKindOfClass:[NSString class]]);
-    XCTAssertTrue([[_body valueForKeyPath:@"location.latitude"] isKindOfClass:[NSNumber class]]);
-    XCTAssertTrue([[_body valueForKeyPath:@"location.longitude"] isKindOfClass:[NSNumber class]]);
-    XCTAssertTrue([[_body valueForKeyPath:@"location.speed"] isKindOfClass:[NSNumber class]]);
+    XCTAssertNotNil([_body valueForKeyPath:@"context.location"]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.location.city"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.location.country"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.location.latitude"] isKindOfClass:[NSNumber class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.location.longitude"] isKindOfClass:[NSNumber class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.location.speed"] isKindOfClass:[NSNumber class]]);
 }
 
 - (void)testNetwork {
-    XCTAssertNotNil(_body[@"network"]);
-    XCTAssertTrue([[_body valueForKeyPath:@"network.bluetooth"] isKindOfClass:[NSNumber class]]);
-    XCTAssertTrue([[_body valueForKeyPath:@"network.carrier"] isKindOfClass:[NSNumber class]]);
-    XCTAssertTrue([[_body valueForKeyPath:@"network.celluar"] isKindOfClass:[NSString class]]);
-    XCTAssertTrue([[_body valueForKeyPath:@"network.wifi"] isKindOfClass:[NSNumber class]]);
+    XCTAssertNotNil([_body valueForKeyPath:@"context.network"]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.network.bluetooth"] isKindOfClass:[NSNumber class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.network.carrier"] isKindOfClass:[NSNumber class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.network.celluar"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.network.wifi"] isKindOfClass:[NSNumber class]]);
 }
 
 - (void)testOS {
-    XCTAssertNotNil(_body[@"os"]);
-    XCTAssertTrue([[_body valueForKeyPath:@"os.name"] isKindOfClass:[NSString class]]);
-    XCTAssertTrue([[_body valueForKeyPath:@"os.version"] isKindOfClass:[NSString class]]);
+    XCTAssertNotNil([_body valueForKeyPath:@"context.os"]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.os.name"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.os.version"] isKindOfClass:[NSString class]]);
 }
 
 - (void)testReferrer {
-    XCTAssertNotNil(_body[@"referrer"]);
-    XCTAssertTrue([_body[@"referrer.type"] isKindOfClass:[NSString class]], @"%@ should be string", _body[@"referrer.type"]);
+    XCTAssertNotNil([_body valueForKeyPath:@"context.referrer"]);
+    XCTAssertTrue([_body[@"context.referrer.type"] isKindOfClass:[NSString class]], @"%@ should be string", _body[@"context.referrer.type"]);
 }
 
 - (void)testScreen {
-    XCTAssertNotNil(_body[@"screen"]);
-    XCTAssertTrue([_body[@"screen.width"] isKindOfClass:[NSNumber class]]);
-    XCTAssertTrue([_body[@"screen.height"] isKindOfClass:[NSNumber class]]);
+    XCTAssertNotNil([_body valueForKeyPath:@"context.screen"]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.screen.width"] isKindOfClass:[NSNumber class]], @"%@ must be number", [_body valueForKeyPath:@"context.screen.width"]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.screen.height"] isKindOfClass:[NSNumber class]], @"%@ must be number", [_body valueForKeyPath:@"context.screen.height"]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.screen.density"] isKindOfClass:[NSNumber class]], @"%@ must be number", [_body valueForKeyPath:@"context.screen.density"]);
 }
 
 - (void)testTimeZone {
-    XCTAssertTrue([_body[@"timezone"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.timezone"] isKindOfClass:[NSString class]]);
 }
 
 @end
