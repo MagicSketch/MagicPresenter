@@ -251,7 +251,15 @@
         
         [context addEntriesFromDictionary:@{ @"mixpanelLibrary":@"" }];
         
-        [dict addEntriesFromDictionary:@{ @"context": context }];
+        NSDate *date = [NSDate date];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSString *timeString = [formatter stringFromDate:date];
+        
+        [dict addEntriesFromDictionary:@{
+                                         @"context": context,
+                                         @"sentAt": timeString
+                                          }];
     }
 
 

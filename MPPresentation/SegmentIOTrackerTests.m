@@ -87,7 +87,7 @@
     XCTAssertEqualObjects(body[@"userId"], @"james");
     XCTAssertEqualObjects(body[@"properties"], @{@"event": @"unit testing"});
     XCTAssertEqualObjects(body[@"event"], @"test");
-    XCTAssertEqual([[body allKeys] count], 4);
+    XCTAssertEqual([[body allKeys] count], 5);
 }
 
 - (void)testSendTracking {
@@ -183,6 +183,10 @@
 
 - (void)testTimeZone {
     XCTAssertTrue([[_body valueForKeyPath:@"context.timezone"] isKindOfClass:[NSString class]]);
+}
+
+- (void)testSentAt {
+    XCTAssertTrue([[_body valueForKeyPath:@"sentAt"] isKindOfClass:[NSString class]]);
 }
 
 - (void)testContext {
