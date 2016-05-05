@@ -77,6 +77,8 @@
                                     }];
         
         return;
+    } else {
+        [self handlePendingRequests];
     }
     
     // then

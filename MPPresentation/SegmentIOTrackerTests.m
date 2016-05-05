@@ -227,4 +227,31 @@
     XCTAssertEqual([[_tracker pendingEvents] count], 0);
 }
 
+
+- (void)testShouldFlushWhenContextIsFilled {
+    NSDictionary *context = @{
+        @"lon":@2,
+        @"lat":@1,
+        @"country":@"Hong Kong",
+        @"city": @"Central District",
+        @"query":@"127.0.0.1",
+        @"regionName": @""
+    };
+
+    _tracker.context = nil;
+    _tracker.uuid = @"james";
+
+    [_tracker track:@"pending1" properties:@{}];
+    [_tracker track:@"pending2" properties:@{}];
+    [_tracker track:@"pending3" properties:@{}];
+    _tracker.context = context;
+
+    XCTAssertNotNil([_tracker pendingEvents]);
+    XCTAssertEqual([[_tracker pendingEvents] count], 3);
+
+    [_tracker track:@"should flush pending" properties:@{}];
+    XCTAssertEqual([[_tracker pendingEvents] count], 0);
+
+}
+
 @end
