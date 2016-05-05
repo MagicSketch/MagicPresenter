@@ -135,9 +135,11 @@
 
 - (void)testLibrary {
 //    TODO: library unit test
-//    XCTAssertNotNil([_body valueForKeyPath:@"context.library"]);
+    XCTAssertNotNil([_body valueForKeyPath:@"context.library"]);
 //    XCTAssertTrue([[_body valueForKeyPath:@"context.library.name"] isKindOfClass:[NSString class]]);
-//    XCTAssertTrue([[_body valueForKeyPath:@"context.library.version"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([[_body valueForKeyPath:@"context.library.version"] isKindOfClass:[NSString class]]);
+    XCTAssertEqualObjects([_body valueForKeyPath:@"context.library.name"], @"MPTracker");
+    XCTAssertEqualObjects([_body valueForKeyPath:@"context.library.version"], @"0.1");
 }
 
 - (void)testLocale {

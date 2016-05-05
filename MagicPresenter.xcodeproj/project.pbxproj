@@ -799,6 +799,7 @@
 				1A09B0541CDB99A200DE32BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A09B0581CDB99A200DE32BD /* Build configuration list for PBXNativeTarget "MPTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -807,6 +808,7 @@
 				1A09B0561CDB99A200DE32BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1AB82BF61CC40BDD00E348D4 /* Build configuration list for PBXProject "MagicPresenter" */ = {
 			isa = XCConfigurationList;

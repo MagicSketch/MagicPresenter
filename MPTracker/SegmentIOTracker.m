@@ -255,13 +255,14 @@
                                                      @"name": @"",
                                                      @"version": [[NSProcessInfo processInfo] operatingSystemVersionString]
                                                      } }];
-        
-//        [context addEntriesFromDictionary:@{ @"library":@{
-//                                                     @"name": @"",
-//                                                     @"version": @""
-//                                                     } }];
-        
-//        NSBundle *pluginBundle = [NSBundle bundleForClass:NSClassFromString(@"MPPresenterController")];
+
+        NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
+        [context addEntriesFromDictionary:@{ @"library":@{
+                                                     @"name": [currentBundle objectForInfoDictionaryKey:@"CFBundleName"],
+                                                     @"version": [currentBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
+                                                     } }];
+
+//        NSBundle *pluginBundle = [NSBundle bundleForClass:NSClassFromString(@"MPPresentationController")];
 //        NSAssert(pluginBundle, @"plugin bundle should not be nil");
 //        NSLog(@"%@", pluginBundle);
 //        [context addEntriesFromDictionary:@{ @"plugin":@{
@@ -269,7 +270,7 @@
 //                                                     @"environment": @"",
 //                                                     @"version": [pluginBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
 //                                                     } }];
-        
+
         [context addEntriesFromDictionary:@{ @"mixpanelLibrary":@"" }];
         
         NSString *timeString = [[self dateFormatter] stringFromDate:date];
