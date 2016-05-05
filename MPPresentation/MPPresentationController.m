@@ -8,8 +8,7 @@
 
 #import "MPPresentationController.h"
 #import "MPPresentationViewController.h"
-#import "SegmentIOTracker.h"
-#import "TrackerManager.h"
+#import <MPTracker/MPTracker.h>
 
 @interface MPPresentationController ()
 
