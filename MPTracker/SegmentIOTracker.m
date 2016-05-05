@@ -94,7 +94,6 @@
                                                            context:self.context
                                                         properties:properties];
     [[self class] sendRequest:request completion:^(NSDictionary *response, NSError *error) {
-        NSLog(@"Segment: response %@ error %@", response, error);
     }];
 }
 

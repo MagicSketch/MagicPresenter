@@ -22,8 +22,13 @@ var present = function(context) {
 
 
 var load = function() {
-    var loaded = Sketch.loadFramework("MagicPresenter", "/Contents/Sketch");
-    return loaded;
+    var loadedMPTracker = Sketch.loadFramework("MPTracker", "/Contents/Sketch");
+    var loadedMagicPresenter = Sketch.loadFramework("MagicPresenter", "/Contents/Sketch");
+
+    log("loaded MagicPresenter: " + loadedMagicPresenter);
+    log("loaded MPTracker: " + loadedMPTracker);
+
+    return loadedMPTracker;
 };
 
 var myClass = function() {

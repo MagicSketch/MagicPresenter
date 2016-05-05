@@ -1,0 +1,6 @@
+framework module MPTracker {
+  umbrella header "MPTracker.h"
+
+  export *
+  module * { export * }
+}
