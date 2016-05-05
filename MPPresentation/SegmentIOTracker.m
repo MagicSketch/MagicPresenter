@@ -74,9 +74,11 @@
                                                                          }];
             [task resume];
         }
+
         [_pendingEvents addObject:@{
                                     @"event": event,
-                                    @"properties": properties
+                                    @"properties": properties,
+                                    @"_date":[NSDate date]
                                     }];
         
         return;
@@ -86,6 +88,7 @@
     
     // then
     NSURLRequest *request = [[self class] trackingRequestWithEvent:event
+                                                              date:[NSDate date]
                                                           writeKey:self.writeKey
                                                             userID:self.uuid
                                                            context:self.context
@@ -100,6 +103,7 @@
     
     for (NSDictionary* event in _pendingEvents) {
         [pendingRequests addObject: [[self class] trackingRequestWithEvent:[event objectForKey:@"event"]
+                                                                      date:[event objectForKey:@"_date"]
                                                                   writeKey:self.writeKey
                                                                     userID:self.uuid
                                                                    context:self.context
@@ -125,6 +129,22 @@
 
 @implementation SegmentIOTracker (Internal)
 
++ (NSDateFormatter *)dateFormatter {
+    static NSDateFormatter *formatter;
+
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if ( ! formatter) {
+            formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+            NSLocale* posix = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+            formatter.locale = posix;
+        }
+    });
+
+    return formatter;
+}
+
 + (NSString *)basicAuthValueForUsername:(NSString *)username password:(NSString *)password {
     return [[NSString stringWithFormat:@"%@:%@", username ?: @"", password ?: @""] base64String];
 }
@@ -145,11 +165,10 @@
     return @"";
 }
 
-+ (NSMutableURLRequest *)trackingRequestWithEvent:(NSString *)event writeKey:(NSString *)key userID:(NSString *)userID context:(NSDictionary *)context3 properties:(NSDictionary *)properties {
++ (NSMutableURLRequest *)trackingRequestWithEvent:(NSString *)event date:(NSDate *)date writeKey:(NSString *)key userID:(NSString *)userID context:(NSDictionary *)context3 properties:(NSDictionary *)properties {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://api.segment.io/v1/track"]];
     request.HTTPMethod = @"POST";
     NSString *base64 = [[self class] basicAuthValueForUsername:key password:nil];
-    NSString *model_ns = @"";
 
     NSAssert(base64, nil);
     [request setValue:[@"Basic " stringByAppendingString:base64] forHTTPHeaderField:@"Authorization"];
@@ -254,14 +273,11 @@
         
         [context addEntriesFromDictionary:@{ @"mixpanelLibrary":@"" }];
         
-        NSDate *date = [NSDate date];
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-        NSString *timeString = [formatter stringFromDate:date];
-        
+        NSString *timeString = [[self dateFormatter] stringFromDate:date];
+
         [dict addEntriesFromDictionary:@{
                                          @"context": context,
-                                         @"sentAt": timeString
+                                         @"timestamp":timeString,
                                           }];
     }
 

@@ -30,6 +30,7 @@ typedef void(^SegmentIOTrackerRequestCompletion)(NSDictionary *response, NSError
 // For Internals, exposed for Testing
 + (NSString *)basicAuthValueForUsername:(NSString *)username password:(NSString *)password;
 + (NSMutableURLRequest *)trackingRequestWithEvent:(NSString *)event
+                                             date:(NSDate *)date
                                          writeKey:(NSString *)key
                                            userID:(NSString *)userID
                                           context:(NSDictionary *)context

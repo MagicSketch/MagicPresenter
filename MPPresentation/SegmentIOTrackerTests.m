@@ -25,6 +25,7 @@
 
 
     _trackingRequest = [SegmentIOTracker trackingRequestWithEvent:@"test"
+                                                             date:[NSDate date]
                                                          writeKey:@"abc123"
                                                            userID:@"james"
                                                           context:@{
@@ -188,8 +189,13 @@
     XCTAssertTrue([[_body valueForKeyPath:@"context.timezone"] isKindOfClass:[NSString class]]);
 }
 
-- (void)testSentAt {
-    XCTAssertTrue([[_body valueForKeyPath:@"sentAt"] isKindOfClass:[NSString class]]);
+- (void)testTimeStamp {
+    NSDateFormatter *dateFormat = [NSDateFormatter new];
+    dateFormat.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSSZ";
+    NSString *timestamp = [_body valueForKeyPath:@"timestamp"];
+    NSDate *date = [dateFormat dateFromString:timestamp];
+    XCTAssertTrue([timestamp isKindOfClass:[NSString class]]);
+    XCTAssertNotNil(date);
 }
 
 - (void)testContext {
