@@ -15,12 +15,12 @@ typedef void(^SegmentIOTrackerRequestCompletion)(NSDictionary *response, NSError
 
 @property (nonatomic, copy, readonly) NSString *writeKey;
 @property (nonatomic, copy) NSDictionary *context;
-@property (nonatomic, copy, readonly) NSArray *pendingEvents;
 @property (nonatomic, readonly) BOOL isObtainingLocation;
 
 - (id)initWithWriteKey:(NSString *)writeKey;
 - (NSArray <NSURLRequest *> *)preparedRequests;
 - (void) handlePendingRequests;
+- (NSArray *)pendingEvents;
 
 @end
 
