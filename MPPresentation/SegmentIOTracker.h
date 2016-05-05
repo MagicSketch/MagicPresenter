@@ -14,8 +14,13 @@ typedef void(^SegmentIOTrackerRequestCompletion)(NSDictionary *response, NSError
 @interface SegmentIOTracker : Tracker
 
 @property (nonatomic, copy, readonly) NSString *writeKey;
+@property (nonatomic, copy) NSDictionary *context;
+@property (nonatomic, readonly) BOOL isObtainingLocation;
 
 - (id)initWithWriteKey:(NSString *)writeKey;
+- (NSArray <NSURLRequest *> *)preparedRequests;
+- (void) handlePendingRequests;
+- (NSArray *)pendingEvents;
 
 @end
 
@@ -25,10 +30,13 @@ typedef void(^SegmentIOTrackerRequestCompletion)(NSDictionary *response, NSError
 // For Internals, exposed for Testing
 + (NSString *)basicAuthValueForUsername:(NSString *)username password:(NSString *)password;
 + (NSMutableURLRequest *)trackingRequestWithEvent:(NSString *)event
+                                             date:(NSDate *)date
                                          writeKey:(NSString *)key
                                            userID:(NSString *)userID
+                                          context:(NSDictionary *)context
                                        properties:(NSDictionary *)properties;
 + (void)sendRequest:(NSURLRequest *)request completion:(SegmentIOTrackerRequestCompletion)completion;
 + (NSDictionary *)bodyForRequest:(NSURLRequest *)request;
++ (NSString *)getSystemStringForKey:(char*)ctlKey;
 
 @end
