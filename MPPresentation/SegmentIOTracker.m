@@ -61,11 +61,14 @@
                                                                                                                                   options:0
                                                                                                                                     error:&parseError];
                                                                              
-                                                                             if(!parseError){
+                                                                             if(!parseError && !error){
                                                                                  _context =  [NSDictionary dictionaryWithDictionary:dict];
                                                                                  [weakSelf handlePendingRequests];
                                                                              }else{
-                                                                                 _isObtainingLocation = NO;
+                                                                                 // Skip getting location again and handle pending request
+//                                                                                 _isObtainingLocation = NO;
+                                                                                 
+                                                                                 [weakSelf handlePendingRequests];
                                                                              }
                                                                              
                                                                          }];
