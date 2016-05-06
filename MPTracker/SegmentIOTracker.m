@@ -203,24 +203,22 @@
                                                   @"height":@(screen.size.height),
                                                   @"density":@([[NSScreen mainScreen] backingScaleFactor])
                                                   }}];
-        
-#if DEBUG
-        NSLog(@"here is debug");
-        [context addEntriesFromDictionary:@{ @"app": @{
-                                                     @"version": @"Debug does not have a version",
-                                                     @"build": @"Debug does not have a version",
-                                                     @"name": @"Debug does not have a version"
-                                                     }}];
-#else
-        NSBundle *mainBundle = [NSBundle mainBundle];
-        NSAssert(mainBundle, @"main bundle should not be nil if it is not in debug mode");
-        [context addEntriesFromDictionary:@{ @"app": @{
-                                                     @"version": [mainBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
-                                                     @"build": [mainBundle objectForInfoDictionaryKey:@"CFBundleVersion"],
-                                                     @"name": [mainBundle objectForInfoDictionaryKey:@"CFBundleName"]
-                                                     }}];
-#endif
-        
+
+        NSBundle *sketchBundle = [NSBundle bundleForClass:NSClassFromString(@"MSDocument")]; // Sketch App classes
+        if ([[sketchBundle infoDictionary] count] > 0) {
+            [context addEntriesFromDictionary:@{ @"app": @{
+                                                         @"version": [sketchBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
+                                                         @"build": [sketchBundle objectForInfoDictionaryKey:@"CFBundleVersion"],
+                                                         @"name": [sketchBundle objectForInfoDictionaryKey:@"CFBundleName"]
+                                                         }}];
+        } else {
+            [context addEntriesFromDictionary:@{ @"app": @{
+                                                         @"version": @"MSDocument not available",
+                                                         @"build": @"MSDocument not available",
+                                                         @"name": @"MSDocument not available",
+                                                         }}];
+        }
+
         [context addEntriesFromDictionary:@{ @"device": @{
                                                      @"manufacturer": @"",
                                                      @"name": [[self class] getSystemStringForKey: "hw.model"],
