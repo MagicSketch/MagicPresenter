@@ -134,9 +134,7 @@
 }
 
 - (void)testLibrary {
-//    TODO: library unit test
     XCTAssertNotNil([_body valueForKeyPath:@"context.library"]);
-//    XCTAssertTrue([[_body valueForKeyPath:@"context.library.name"] isKindOfClass:[NSString class]]);
     XCTAssertTrue([[_body valueForKeyPath:@"context.library.version"] isKindOfClass:[NSString class]]);
     XCTAssertEqualObjects([_body valueForKeyPath:@"context.library.name"], @"MPTracker");
     XCTAssertEqualObjects([_body valueForKeyPath:@"context.library.version"], @"0.1");
@@ -268,5 +266,11 @@
     XCTAssertEqual([[_tracker pendingEvents] count], 0);
 
 }
+
+//- (void)testPluginEnvironment {
+//    XCTAssertEqualObjects([_body valueForKeyPath:@"properties.Plugin Environment"], @"Development");
+//    XCTAssertEqualObjects([_body valueForKeyPath:@"properties.Plugin Version"], @"1.0");
+//    XCTAssertEqualObjects([_body valueForKeyPath:@"properties.Plugin Build"], @"1");
+//}
 
 @end

@@ -17,6 +17,7 @@
 @property (nonatomic, copy) NSString *writeKey;
 @property (nonatomic, strong) NSMutableArray *pendingEvents;
 @property (nonatomic) BOOL isObtainingLocation;
+@property (nonatomic, copy) NSDictionary *superProperties;
 
 @end
 
@@ -87,12 +88,15 @@
     }
     
     // then
+    NSMutableDictionary *fullProperties = [[NSMutableDictionary alloc] init];
+    [fullProperties addEntriesFromDictionary:_superProperties];
+    [fullProperties addEntriesFromDictionary:properties];
     NSURLRequest *request = [[self class] trackingRequestWithEvent:event
                                                               date:[NSDate date]
                                                           writeKey:self.writeKey
                                                             userID:self.uuid
                                                            context:self.context
-                                                        properties:properties];
+                                                        properties:fullProperties];
     [[self class] sendRequest:request completion:^(NSDictionary *response, NSError *error) {
     }];
 }
@@ -101,12 +105,15 @@
     NSMutableArray<NSURLRequest *> *pendingRequests = [[NSMutableArray alloc] init];
     
     for (NSDictionary* event in _pendingEvents) {
+        NSMutableDictionary *fullProperties = [[NSMutableDictionary alloc] init];
+        [fullProperties addEntriesFromDictionary:_superProperties];
+        [fullProperties addEntriesFromDictionary:[event objectForKey:@"properties"]];
         [pendingRequests addObject: [[self class] trackingRequestWithEvent:[event objectForKey:@"event"]
                                                                       date:[event objectForKey:@"_date"]
                                                                   writeKey:self.writeKey
                                                                     userID:self.uuid
                                                                    context:self.context
-                                                                properties:[event objectForKey:@"properties"]]];
+                                                                properties:fullProperties]];
     }
 
     return pendingRequests;
@@ -164,7 +171,12 @@
     return @"";
 }
 
-+ (NSMutableURLRequest *)trackingRequestWithEvent:(NSString *)event date:(NSDate *)date writeKey:(NSString *)key userID:(NSString *)userID context:(NSDictionary *)context3 properties:(NSDictionary *)properties {
++ (NSMutableURLRequest *)trackingRequestWithEvent:(NSString *)event
+                                             date:(NSDate *)date
+                                         writeKey:(NSString *)key
+                                           userID:(NSString *)userID
+                                          context:(NSDictionary *)context3
+                                       properties:(NSDictionary *)properties {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://api.segment.io/v1/track"]];
     request.HTTPMethod = @"POST";
     NSString *base64 = [[self class] basicAuthValueForUsername:key password:nil];
@@ -232,14 +244,14 @@
 //            f.numberStyle = NSNumberFormatterDecimalStyle;
             
             [context addEntriesFromDictionary:@{ @"location": @{
-                                                         @"city": [context3 objectForKey:@"city"],
-                                                         @"country": [context3 objectForKey:@"country"],
-                                                         @"latitude": [context3 objectForKey:@"lat"],
-                                                         @"longitude": [context3 objectForKey:@"lon"],
-                                                         @"region": [context3 objectForKey:@"regionName"]
+                                                         @"city": [context3 objectForKey:@"city"] ?: @"",
+                                                         @"country": [context3 objectForKey:@"country"] ?: @"",
+                                                         @"latitude": [context3 objectForKey:@"lat"] ?: @"",
+                                                         @"longitude": [context3 objectForKey:@"lon"] ?: @"",
+                                                         @"region": [context3 objectForKey:@"regionName"] ?: @""
                                                          } }];
             
-            [context addEntriesFromDictionary:@{ @"ip": [context3 objectForKey:@"query"] }];
+            [context addEntriesFromDictionary:@{ @"ip": [context3 objectForKey:@"query"]  ?: @""}];
         }
         
         [context addEntriesFromDictionary:@{ @"network":@{
@@ -260,14 +272,6 @@
                                                      @"version": [currentBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
                                                      } }];
 
-//        NSBundle *pluginBundle = [NSBundle bundleForClass:NSClassFromString(@"MPPresentationController")];
-//        NSAssert(pluginBundle, @"plugin bundle should not be nil");
-//        NSLog(@"%@", pluginBundle);
-//        [context addEntriesFromDictionary:@{ @"plugin":@{
-//                                                     @"build": [pluginBundle objectForInfoDictionaryKey:@"CFBundleVersion"],
-//                                                     @"environment": @"",
-//                                                     @"version": [pluginBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
-//                                                     } }];
 
         [context addEntriesFromDictionary:@{ @"mixpanelLibrary":@"" }];
         

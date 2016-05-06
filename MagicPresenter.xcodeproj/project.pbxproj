@@ -61,6 +61,7 @@
 		1AB82C201CC40BEC00E348D4 /* MPPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB82C1A1CC40BEC00E348D4 /* MPPresentationViewController.m */; };
 		1AB82C211CC40BEC00E348D4 /* MPSlide.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AB82C1B1CC40BEC00E348D4 /* MPSlide.h */; };
 		1AB82C231CC40C1C00E348D4 /* MagicPresenter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1AB82BFC1CC40BDD00E348D4 /* MagicPresenter.framework */; };
+		1AC2F93A1CDC9358003FFB58 /* MPTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A09B0421CDB99A100DE32BD /* MPTracker.framework */; };
 		1AE44CFA1CD1C60800B48B92 /* MagicPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AB82BFF1CC40BDD00E348D4 /* MagicPresenter.h */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 1AB82BFB1CC40BDD00E348D4;
 			remoteInfo = Presentation;
+		};
+		1AC2F9381CDC9352003FFB58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AB82BF31CC40BDD00E348D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A09B0411CDB99A100DE32BD;
+			remoteInfo = MPTracker;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -191,6 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC2F93A1CDC9358003FFB58 /* MPTracker.framework in Frameworks */,
 				1AB82C071CC40BDD00E348D4 /* MagicPresenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +422,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1AC2F9391CDC9352003FFB58 /* PBXTargetDependency */,
 				1AB82C091CC40BDD00E348D4 /* PBXTargetDependency */,
 			);
 			name = MagicPresenterTests;
@@ -584,6 +594,11 @@
 			isa = PBXTargetDependency;
 			target = 1AB82BFB1CC40BDD00E348D4 /* MagicPresenter */;
 			targetProxy = 1AB82C081CC40BDD00E348D4 /* PBXContainerItemProxy */;
+		};
+		1AC2F9391CDC9352003FFB58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A09B0411CDB99A100DE32BD /* MPTracker */;
+			targetProxy = 1AC2F9381CDC9352003FFB58 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

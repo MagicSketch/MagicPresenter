@@ -23,6 +23,19 @@
 - (BOOL)launchWithSlides:(NSArray *)slides atIndex:(NSUInteger)index {
     SegmentIOTracker *segmentIO = [[SegmentIOTracker alloc] initWithWriteKey:@"SBHy82Wt9KnfUGY3rnFMETcAJSEvL2PA"];
     _tracker = [[TrackerManager alloc] initWithTrackers:@[segmentIO] identifier:@"io.magicsketch.tracker"];
+    NSBundle *pluginBundle = [NSBundle bundleForClass:[self class]];
+
+    NSString *env = nil;
+#ifdef DEBUG
+    env = @"Development";
+#else
+    env = @"Production";
+#endif
+    [_tracker setSuperProperties:@{
+                                   @"Plugin Version":[pluginBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
+                                   @"Plugin Build":[pluginBundle objectForInfoDictionaryKey:@"CFBundleVersion"],
+                                   @"Plugin Environment":env,
+                                   }];
     [_tracker track:@"Started" properties:@{}];
     [_tracker setAsSharedInstance];
 
