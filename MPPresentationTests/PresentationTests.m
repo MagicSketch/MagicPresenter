@@ -10,13 +10,16 @@
 
 @interface MPPresentationTests : XCTestCase
 
+@property (nonatomic, strong) NSBundle *pluginBundle;
+
 @end
 
 @implementation MPPresentationTests
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+
+    _pluginBundle = [NSBundle bundleForClass:NSClassFromString(@"MPPresentationController")];
 }
 
 - (void)tearDown {
@@ -29,11 +32,19 @@
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testVersionInSync {
+    NSLog(@"project dir=%@, BUILD_ROOT_=%@", PROJECT_DIR, BUILD_ROOT);
+
+    NSString *path = [PROJECT_DIR stringByAppendingPathComponent:@"MagicPresenter.sketchplugin/Contents/Sketch/manifest.json"];
+    XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:path]);
+
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+
+    XCTAssertNotNil(JSON);
+
+    XCTAssertEqualObjects(JSON[@"build"], [_pluginBundle objectForInfoDictionaryKey:@"CFBundleVersion"]);
+    XCTAssertEqualObjects(JSON[@"version"], [_pluginBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"]);
 }
 
 @end

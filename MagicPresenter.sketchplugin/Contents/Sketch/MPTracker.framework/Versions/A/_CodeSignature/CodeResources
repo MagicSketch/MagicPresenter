@@ -6,42 +6,46 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		EnuqYpKigtGip2t5Tl/ZXDuu2Gs=
-		</data>
-		<key>Resources/MPPresentation.storyboardc/Info.plist</key>
-		<data>
-		NKn7lliGmUGvnwUuRyXZhr38o6I=
-		</data>
-		<key>Resources/MPPresentation.storyboardc/NSWindowController-ZD3-Sm-dmc.nib</key>
-		<data>
-		lTKrf62itk/UAHQeglp0tvuGPW4=
-		</data>
-		<key>Resources/MPPresentation.storyboardc/PW1-Ig-6sw-view-OMR-Qt-p6i.nib</key>
-		<data>
-		OxG01P6QhkWiBUCRFAaIIiCr8SA=
+		9rlruWErC41UmPgQRcFPfWOUKvY=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/MPTracker.h</key>
+		<data>
+		cLlwxj4/++TwyP6dFrpWiYUYEkQ=
+		</data>
+		<key>Headers/SegmentIOTracker.h</key>
+		<data>
+		OqHqWgO42UdbPxuYACRdM3jQrkY=
+		</data>
+		<key>Headers/TimedEvent.h</key>
+		<data>
+		rlSMKhBuK7yOgKgSAlfNpdy8GDw=
+		</data>
+		<key>Headers/TimedTracker.h</key>
+		<data>
+		YufcvHRZd+t6+vVNIpX0q4Sw1xw=
+		</data>
+		<key>Headers/TimedTrackerDelegate.h</key>
+		<data>
+		AHbJrlOM2eFDt5Wi9Pluz6U/u1s=
+		</data>
+		<key>Headers/Tracker.h</key>
+		<data>
+		mNyPqhJuHDK/krqoCqslAkNPfW8=
+		</data>
+		<key>Headers/TrackerManager.h</key>
+		<data>
+		YsnMpGWuxsJSkD49f4MY/DatHWU=
+		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		RrdcDoviDzvnSaWTCoLqgnOWy4g=
+		+Zf/kt05TcMByPHc0u+SidQfVfY=
 		</data>
 		<key>Resources/Info.plist</key>
 		<data>
-		EnuqYpKigtGip2t5Tl/ZXDuu2Gs=
-		</data>
-		<key>Resources/MPPresentation.storyboardc/Info.plist</key>
-		<data>
-		NKn7lliGmUGvnwUuRyXZhr38o6I=
-		</data>
-		<key>Resources/MPPresentation.storyboardc/NSWindowController-ZD3-Sm-dmc.nib</key>
-		<data>
-		lTKrf62itk/UAHQeglp0tvuGPW4=
-		</data>
-		<key>Resources/MPPresentation.storyboardc/PW1-Ig-6sw-view-OMR-Qt-p6i.nib</key>
-		<data>
-		OxG01P6QhkWiBUCRFAaIIiCr8SA=
+		9rlruWErC41UmPgQRcFPfWOUKvY=
 		</data>
 	</dict>
 	<key>rules</key>

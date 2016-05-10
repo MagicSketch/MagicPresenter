@@ -7,17 +7,17 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
-	<string>MagicPresenter</string>
+	<string>MPTracker</string>
 	<key>CFBundleIdentifier</key>
-	<string>io.magicsketch.presenter</string>
+	<string>io.magicsketch.MPTracker</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>MagicPresenter</string>
+	<string>MPTracker</string>
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>0.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -25,7 +25,7 @@
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>1</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
@@ -42,5 +42,7 @@
 	<string>7C68</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2016 MagicSketch. All rights reserved.</string>
+	<key>ProjectDIR</key>
+	<string>/Users/james/Dropbox/Projects/Magic Sketch/Magic Presenter/Code</string>
 </dict>
 </plist>

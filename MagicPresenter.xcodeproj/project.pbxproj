@@ -7,6 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A09B04C1CDB99A200DE32BD /* MPTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A09B0421CDB99A100DE32BD /* MPTracker.framework */; };
+		1A09B0511CDB99A200DE32BD /* MPTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0501CDB99A200DE32BD /* MPTrackerTests.m */; };
+		1A09B0A81CDB99C100DE32BD /* MPTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0441CDB99A100DE32BD /* MPTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A09B0BB1CDB9CA200DE32BD /* MPTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A09B0421CDB99A100DE32BD /* MPTracker.framework */; };
+		1A09B0BC1CDB9CAB00DE32BD /* MPTracker.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A09B0421CDB99A100DE32BD /* MPTracker.framework */; };
+		1A09B0DF1CDB9D9900DE32BD /* CounterTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0BD1CDB9D9900DE32BD /* CounterTracker.h */; };
+		1A09B0E01CDB9D9900DE32BD /* CounterTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0BE1CDB9D9900DE32BD /* CounterTracker.m */; };
+		1A09B0E11CDB9D9900DE32BD /* DeferableTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0BF1CDB9D9900DE32BD /* DeferableTracker.h */; };
+		1A09B0E21CDB9D9900DE32BD /* DeferableTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0C01CDB9D9900DE32BD /* DeferableTracker.m */; };
+		1A09B0E41CDB9D9900DE32BD /* Deferrable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0C21CDB9D9900DE32BD /* Deferrable.h */; };
+		1A09B0E51CDB9D9900DE32BD /* Each.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0C31CDB9D9900DE32BD /* Each.h */; };
+		1A09B0E61CDB9D9900DE32BD /* Each.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0C41CDB9D9900DE32BD /* Each.m */; };
+		1A09B0E71CDB9D9900DE32BD /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0C51CDB9D9900DE32BD /* Event.h */; };
+		1A09B0E81CDB9D9900DE32BD /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0C61CDB9D9900DE32BD /* Event.m */; };
+		1A09B0E91CDB9D9900DE32BD /* MockedTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0C71CDB9D9900DE32BD /* MockedTracker.h */; };
+		1A09B0EA1CDB9D9900DE32BD /* MockedTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0C81CDB9D9900DE32BD /* MockedTracker.m */; };
+		1A09B0EB1CDB9D9900DE32BD /* NSMutableArray+Shuffle.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0C91CDB9D9900DE32BD /* NSMutableArray+Shuffle.h */; };
+		1A09B0EC1CDB9D9900DE32BD /* NSMutableArray+Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0CA1CDB9D9900DE32BD /* NSMutableArray+Shuffle.m */; };
+		1A09B0EE1CDB9D9900DE32BD /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0CC1CDB9D9900DE32BD /* NSString+MD5.h */; };
+		1A09B0EF1CDB9D9900DE32BD /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0CD1CDB9D9900DE32BD /* NSString+MD5.m */; };
+		1A09B0F01CDB9D9900DE32BD /* SegmentIOTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0CE1CDB9D9900DE32BD /* SegmentIOTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A09B0F11CDB9D9900DE32BD /* SegmentIOTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0CF1CDB9D9900DE32BD /* SegmentIOTracker.m */; };
+		1A09B0F31CDB9D9900DE32BD /* TimedEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0D11CDB9D9900DE32BD /* TimedEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A09B0F41CDB9D9900DE32BD /* TimedEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0D21CDB9D9900DE32BD /* TimedEvent.m */; };
+		1A09B0F61CDB9D9900DE32BD /* TimedTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0D41CDB9D9900DE32BD /* TimedTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A09B0F71CDB9D9900DE32BD /* TimedTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0D51CDB9D9900DE32BD /* TimedTracker.m */; };
+		1A09B0F81CDB9D9900DE32BD /* TimedTrackerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0D61CDB9D9900DE32BD /* TimedTrackerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A09B0FA1CDB9D9900DE32BD /* Tracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0D81CDB9D9900DE32BD /* Tracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A09B0FB1CDB9D9900DE32BD /* Tracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0D91CDB9D9900DE32BD /* Tracker.m */; };
+		1A09B0FC1CDB9D9900DE32BD /* TrackerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0DA1CDB9D9900DE32BD /* TrackerManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A09B0FD1CDB9D9900DE32BD /* TrackerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0DB1CDB9D9900DE32BD /* TrackerManager.m */; };
+		1A09B0FE1CDB9D9900DE32BD /* TrackerPersister.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A09B0DC1CDB9D9900DE32BD /* TrackerPersister.h */; };
+		1A09B0FF1CDB9D9900DE32BD /* TrackerPersister.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0DD1CDB9D9900DE32BD /* TrackerPersister.m */; };
+		1A09B1011CDB9DA400DE32BD /* DeferableTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0C11CDB9D9900DE32BD /* DeferableTrackerTests.m */; };
+		1A09B1021CDB9DA400DE32BD /* NSMutableArrayShuffleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0CB1CDB9D9900DE32BD /* NSMutableArrayShuffleTests.m */; };
+		1A09B1031CDB9DA400DE32BD /* SegmentIOTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0D01CDB9D9900DE32BD /* SegmentIOTrackerTests.m */; };
+		1A09B1041CDB9DA400DE32BD /* TimedEventTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0D31CDB9D9900DE32BD /* TimedEventTests.m */; };
+		1A09B1051CDB9DA400DE32BD /* TimedTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0D71CDB9D9900DE32BD /* TimedTrackerTests.m */; };
+		1A09B1061CDB9DA400DE32BD /* TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A09B0DE1CDB9D9900DE32BD /* TrackerTests.m */; };
 		1A74A55C1CC7E0CD00404E28 /* NSWindow+FullScreenMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A74A55A1CC7E0CD00404E28 /* NSWindow+FullScreenMode.h */; };
 		1A74A55D1CC7E0CD00404E28 /* NSWindow+FullScreenMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A74A55B1CC7E0CD00404E28 /* NSWindow+FullScreenMode.m */; };
 		1A8166FE1CC5311F00D70CBE /* MPPresentationWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A8166FC1CC5311F00D70CBE /* MPPresentationWindowController.h */; };
@@ -22,52 +61,38 @@
 		1AB82C201CC40BEC00E348D4 /* MPPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB82C1A1CC40BEC00E348D4 /* MPPresentationViewController.m */; };
 		1AB82C211CC40BEC00E348D4 /* MPSlide.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AB82C1B1CC40BEC00E348D4 /* MPSlide.h */; };
 		1AB82C231CC40C1C00E348D4 /* MagicPresenter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1AB82BFC1CC40BDD00E348D4 /* MagicPresenter.framework */; };
+		1AC2F93A1CDC9358003FFB58 /* MPTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A09B0421CDB99A100DE32BD /* MPTracker.framework */; };
 		1AE44CFA1CD1C60800B48B92 /* MagicPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AB82BFF1CC40BDD00E348D4 /* MagicPresenter.h */; };
-		1AE44D2B1CD2116100B48B92 /* Deferrable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE44CFB1CD2116100B48B92 /* Deferrable.h */; };
-		1AE44D2D1CD2116100B48B92 /* DeferableTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE44CFD1CD2116100B48B92 /* DeferableTracker.h */; };
-		1AE44D2E1CD2116100B48B92 /* DeferableTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44CFE1CD2116100B48B92 /* DeferableTracker.m */; };
-		1AE44D301CD2116100B48B92 /* Each.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE44D001CD2116100B48B92 /* Each.h */; };
-		1AE44D311CD2116100B48B92 /* Each.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D011CD2116100B48B92 /* Each.m */; };
-		1AE44D321CD2116100B48B92 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE44D021CD2116100B48B92 /* Event.h */; };
-		1AE44D331CD2116100B48B92 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D031CD2116100B48B92 /* Event.m */; };
-		1AE44D341CD2116100B48B92 /* Tracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE44D041CD2116100B48B92 /* Tracker.h */; };
-		1AE44D351CD2116100B48B92 /* Tracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D051CD2116100B48B92 /* Tracker.m */; };
-		1AE44D361CD2116100B48B92 /* TimedTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE44D061CD2116100B48B92 /* TimedTracker.h */; };
-		1AE44D371CD2116100B48B92 /* TimedTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D071CD2116100B48B92 /* TimedTracker.m */; };
-		1AE44D381CD2116100B48B92 /* TimedTrackerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE44D081CD2116100B48B92 /* TimedTrackerDelegate.h */; };
-		1AE44D391CD2116100B48B92 /* TimedEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE44D091CD2116100B48B92 /* TimedEvent.h */; };
-		1AE44D3A1CD2116100B48B92 /* TimedEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D0A1CD2116100B48B92 /* TimedEvent.m */; };
-		1AE44D3B1CD2116100B48B92 /* CounterTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE44D0B1CD2116100B48B92 /* CounterTracker.h */; };
-		1AE44D3C1CD2116100B48B92 /* CounterTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D0C1CD2116100B48B92 /* CounterTracker.m */; };
-		1AE44D411CD2116100B48B92 /* MockedTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE44D111CD2116100B48B92 /* MockedTracker.h */; };
-		1AE44D421CD2116100B48B92 /* MockedTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D121CD2116100B48B92 /* MockedTracker.m */; };
-		1AE44D471CD2116100B48B92 /* TrackerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE44D171CD2116100B48B92 /* TrackerManager.h */; };
-		1AE44D481CD2116100B48B92 /* TrackerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D181CD2116100B48B92 /* TrackerManager.m */; };
-		1AE44D491CD2116100B48B92 /* TrackerPersister.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE44D191CD2116100B48B92 /* TrackerPersister.h */; };
-		1AE44D4A1CD2116100B48B92 /* TrackerPersister.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D1A1CD2116100B48B92 /* TrackerPersister.m */; };
-		1AE44D561CD2116100B48B92 /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AE44D261CD2116100B48B92 /* invalid.json */; };
-		1AE44D571CD2116100B48B92 /* wrongtype.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AE44D271CD2116100B48B92 /* wrongtype.json */; };
-		1AE44D581CD2116100B48B92 /* NSMutableArray+Shuffle.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE44D281CD2116100B48B92 /* NSMutableArray+Shuffle.h */; };
-		1AE44D591CD2116100B48B92 /* NSMutableArray+Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D291CD2116100B48B92 /* NSMutableArray+Shuffle.m */; };
-		1AE44D5C1CD2119100B48B92 /* TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D1B1CD2116100B48B92 /* TrackerTests.m */; };
-		1AE44D5D1CD2119100B48B92 /* TimedTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D1C1CD2116100B48B92 /* TimedTrackerTests.m */; };
-		1AE44D5E1CD2119100B48B92 /* TimedEventTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D1D1CD2116100B48B92 /* TimedEventTests.m */; };
-		1AE44D5F1CD211CA00B48B92 /* DeferableTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44CFF1CD2116100B48B92 /* DeferableTrackerTests.m */; };
-		1AE44D601CD211E200B48B92 /* NSMutableArrayShuffleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D2A1CD2116100B48B92 /* NSMutableArrayShuffleTests.m */; };
-		1AE44D631CD219FE00B48B92 /* SegmentIOTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE44D611CD219FE00B48B92 /* SegmentIOTracker.h */; };
-		1AE44D641CD219FE00B48B92 /* SegmentIOTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D621CD219FE00B48B92 /* SegmentIOTracker.m */; };
-		1AE44D661CD24C3100B48B92 /* SegmentIOTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D651CD24C3100B48B92 /* SegmentIOTrackerTests.m */; };
-		1AE44D691CD24D7B00B48B92 /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE44D671CD24D7B00B48B92 /* NSString+MD5.h */; };
-		1AE44D6A1CD24D7B00B48B92 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44D681CD24D7B00B48B92 /* NSString+MD5.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1A09B04D1CDB99A200DE32BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AB82BF31CC40BDD00E348D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A09B0411CDB99A100DE32BD;
+			remoteInfo = MPTracker;
+		};
+		1A09B0B91CDB9C9F00DE32BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AB82BF31CC40BDD00E348D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A09B0411CDB99A100DE32BD;
+			remoteInfo = MPTracker;
+		};
 		1AB82C081CC40BDD00E348D4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1AB82BF31CC40BDD00E348D4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1AB82BFB1CC40BDD00E348D4;
 			remoteInfo = Presentation;
+		};
+		1AC2F9381CDC9352003FFB58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AB82BF31CC40BDD00E348D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A09B0411CDB99A100DE32BD;
+			remoteInfo = MPTracker;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -78,6 +103,7 @@
 			dstPath = "~/Projects/MagicPresenter/MagicPresenter.sketchplugin/Contents/Sketch";
 			dstSubfolderSpec = 0;
 			files = (
+				1A09B0BC1CDB9CAB00DE32BD /* MPTracker.framework in CopyFiles */,
 				1AB82C231CC40C1C00E348D4 /* MagicPresenter.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +111,46 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A09B0421CDB99A100DE32BD /* MPTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MPTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A09B0441CDB99A100DE32BD /* MPTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPTracker.h; sourceTree = "<group>"; };
+		1A09B0461CDB99A100DE32BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A09B04B1CDB99A100DE32BD /* MPTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MPTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A09B0501CDB99A200DE32BD /* MPTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPTrackerTests.m; sourceTree = "<group>"; };
+		1A09B0521CDB99A200DE32BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A09B0BD1CDB9D9900DE32BD /* CounterTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterTracker.h; sourceTree = "<group>"; };
+		1A09B0BE1CDB9D9900DE32BD /* CounterTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterTracker.m; sourceTree = "<group>"; };
+		1A09B0BF1CDB9D9900DE32BD /* DeferableTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeferableTracker.h; sourceTree = "<group>"; };
+		1A09B0C01CDB9D9900DE32BD /* DeferableTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeferableTracker.m; sourceTree = "<group>"; };
+		1A09B0C11CDB9D9900DE32BD /* DeferableTrackerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeferableTrackerTests.m; sourceTree = "<group>"; };
+		1A09B0C21CDB9D9900DE32BD /* Deferrable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deferrable.h; sourceTree = "<group>"; };
+		1A09B0C31CDB9D9900DE32BD /* Each.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Each.h; sourceTree = "<group>"; };
+		1A09B0C41CDB9D9900DE32BD /* Each.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Each.m; sourceTree = "<group>"; };
+		1A09B0C51CDB9D9900DE32BD /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		1A09B0C61CDB9D9900DE32BD /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		1A09B0C71CDB9D9900DE32BD /* MockedTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockedTracker.h; sourceTree = "<group>"; };
+		1A09B0C81CDB9D9900DE32BD /* MockedTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockedTracker.m; sourceTree = "<group>"; };
+		1A09B0C91CDB9D9900DE32BD /* NSMutableArray+Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffle.h"; sourceTree = "<group>"; };
+		1A09B0CA1CDB9D9900DE32BD /* NSMutableArray+Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffle.m"; sourceTree = "<group>"; };
+		1A09B0CB1CDB9D9900DE32BD /* NSMutableArrayShuffleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableArrayShuffleTests.m; sourceTree = "<group>"; };
+		1A09B0CC1CDB9D9900DE32BD /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		1A09B0CD1CDB9D9900DE32BD /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		1A09B0CE1CDB9D9900DE32BD /* SegmentIOTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentIOTracker.h; sourceTree = "<group>"; };
+		1A09B0CF1CDB9D9900DE32BD /* SegmentIOTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentIOTracker.m; sourceTree = "<group>"; };
+		1A09B0D01CDB9D9900DE32BD /* SegmentIOTrackerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentIOTrackerTests.m; sourceTree = "<group>"; };
+		1A09B0D11CDB9D9900DE32BD /* TimedEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimedEvent.h; sourceTree = "<group>"; };
+		1A09B0D21CDB9D9900DE32BD /* TimedEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimedEvent.m; sourceTree = "<group>"; };
+		1A09B0D31CDB9D9900DE32BD /* TimedEventTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimedEventTests.m; sourceTree = "<group>"; };
+		1A09B0D41CDB9D9900DE32BD /* TimedTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimedTracker.h; sourceTree = "<group>"; };
+		1A09B0D51CDB9D9900DE32BD /* TimedTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimedTracker.m; sourceTree = "<group>"; };
+		1A09B0D61CDB9D9900DE32BD /* TimedTrackerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimedTrackerDelegate.h; sourceTree = "<group>"; };
+		1A09B0D71CDB9D9900DE32BD /* TimedTrackerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimedTrackerTests.m; sourceTree = "<group>"; };
+		1A09B0D81CDB9D9900DE32BD /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
+		1A09B0D91CDB9D9900DE32BD /* Tracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tracker.m; sourceTree = "<group>"; };
+		1A09B0DA1CDB9D9900DE32BD /* TrackerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackerManager.h; sourceTree = "<group>"; };
+		1A09B0DB1CDB9D9900DE32BD /* TrackerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackerManager.m; sourceTree = "<group>"; };
+		1A09B0DC1CDB9D9900DE32BD /* TrackerPersister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackerPersister.h; sourceTree = "<group>"; };
+		1A09B0DD1CDB9D9900DE32BD /* TrackerPersister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackerPersister.m; sourceTree = "<group>"; };
+		1A09B0DE1CDB9D9900DE32BD /* TrackerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackerTests.m; sourceTree = "<group>"; };
 		1A74A55A1CC7E0CD00404E28 /* NSWindow+FullScreenMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+FullScreenMode.h"; sourceTree = "<group>"; };
 		1A74A55B1CC7E0CD00404E28 /* NSWindow+FullScreenMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+FullScreenMode.m"; sourceTree = "<group>"; };
 		1A8166FC1CC5311F00D70CBE /* MPPresentationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPresentationWindowController.h; sourceTree = "<group>"; };
@@ -103,49 +169,29 @@
 		1AB82C191CC40BEC00E348D4 /* MPPresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPresentationViewController.h; sourceTree = "<group>"; };
 		1AB82C1A1CC40BEC00E348D4 /* MPPresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPresentationViewController.m; sourceTree = "<group>"; };
 		1AB82C1B1CC40BEC00E348D4 /* MPSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSlide.h; sourceTree = "<group>"; };
-		1AE44CFB1CD2116100B48B92 /* Deferrable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deferrable.h; sourceTree = "<group>"; };
-		1AE44CFD1CD2116100B48B92 /* DeferableTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeferableTracker.h; sourceTree = "<group>"; };
-		1AE44CFE1CD2116100B48B92 /* DeferableTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeferableTracker.m; sourceTree = "<group>"; };
-		1AE44CFF1CD2116100B48B92 /* DeferableTrackerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeferableTrackerTests.m; sourceTree = "<group>"; };
-		1AE44D001CD2116100B48B92 /* Each.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Each.h; sourceTree = "<group>"; };
-		1AE44D011CD2116100B48B92 /* Each.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Each.m; sourceTree = "<group>"; };
-		1AE44D021CD2116100B48B92 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		1AE44D031CD2116100B48B92 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		1AE44D041CD2116100B48B92 /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
-		1AE44D051CD2116100B48B92 /* Tracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tracker.m; sourceTree = "<group>"; };
-		1AE44D061CD2116100B48B92 /* TimedTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimedTracker.h; sourceTree = "<group>"; };
-		1AE44D071CD2116100B48B92 /* TimedTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimedTracker.m; sourceTree = "<group>"; };
-		1AE44D081CD2116100B48B92 /* TimedTrackerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimedTrackerDelegate.h; sourceTree = "<group>"; };
-		1AE44D091CD2116100B48B92 /* TimedEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimedEvent.h; sourceTree = "<group>"; };
-		1AE44D0A1CD2116100B48B92 /* TimedEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimedEvent.m; sourceTree = "<group>"; };
-		1AE44D0B1CD2116100B48B92 /* CounterTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterTracker.h; sourceTree = "<group>"; };
-		1AE44D0C1CD2116100B48B92 /* CounterTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterTracker.m; sourceTree = "<group>"; };
-		1AE44D111CD2116100B48B92 /* MockedTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockedTracker.h; sourceTree = "<group>"; };
-		1AE44D121CD2116100B48B92 /* MockedTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockedTracker.m; sourceTree = "<group>"; };
-		1AE44D171CD2116100B48B92 /* TrackerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackerManager.h; sourceTree = "<group>"; };
-		1AE44D181CD2116100B48B92 /* TrackerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackerManager.m; sourceTree = "<group>"; };
-		1AE44D191CD2116100B48B92 /* TrackerPersister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackerPersister.h; sourceTree = "<group>"; };
-		1AE44D1A1CD2116100B48B92 /* TrackerPersister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackerPersister.m; sourceTree = "<group>"; };
-		1AE44D1B1CD2116100B48B92 /* TrackerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackerTests.m; sourceTree = "<group>"; };
-		1AE44D1C1CD2116100B48B92 /* TimedTrackerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimedTrackerTests.m; sourceTree = "<group>"; };
-		1AE44D1D1CD2116100B48B92 /* TimedEventTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimedEventTests.m; sourceTree = "<group>"; };
-		1AE44D261CD2116100B48B92 /* invalid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid.json; sourceTree = "<group>"; };
-		1AE44D271CD2116100B48B92 /* wrongtype.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wrongtype.json; sourceTree = "<group>"; };
-		1AE44D281CD2116100B48B92 /* NSMutableArray+Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffle.h"; sourceTree = "<group>"; };
-		1AE44D291CD2116100B48B92 /* NSMutableArray+Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffle.m"; sourceTree = "<group>"; };
-		1AE44D2A1CD2116100B48B92 /* NSMutableArrayShuffleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableArrayShuffleTests.m; sourceTree = "<group>"; };
-		1AE44D611CD219FE00B48B92 /* SegmentIOTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentIOTracker.h; sourceTree = "<group>"; };
-		1AE44D621CD219FE00B48B92 /* SegmentIOTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentIOTracker.m; sourceTree = "<group>"; };
-		1AE44D651CD24C3100B48B92 /* SegmentIOTrackerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentIOTrackerTests.m; sourceTree = "<group>"; };
-		1AE44D671CD24D7B00B48B92 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
-		1AE44D681CD24D7B00B48B92 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1A09B03E1CDB99A100DE32BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A09B0481CDB99A100DE32BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A09B04C1CDB99A200DE32BD /* MPTracker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1AB82BF81CC40BDD00E348D4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A09B0BB1CDB9CA200DE32BD /* MPTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC2F93A1CDC9358003FFB58 /* MPTracker.framework in Frameworks */,
 				1AB82C071CC40BDD00E348D4 /* MagicPresenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,11 +207,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A09B0431CDB99A100DE32BD /* MPTracker */ = {
+			isa = PBXGroup;
+			children = (
+				1A09B0441CDB99A100DE32BD /* MPTracker.h */,
+				1A09B0BD1CDB9D9900DE32BD /* CounterTracker.h */,
+				1A09B0BE1CDB9D9900DE32BD /* CounterTracker.m */,
+				1A09B0BF1CDB9D9900DE32BD /* DeferableTracker.h */,
+				1A09B0C01CDB9D9900DE32BD /* DeferableTracker.m */,
+				1A09B0C11CDB9D9900DE32BD /* DeferableTrackerTests.m */,
+				1A09B0C21CDB9D9900DE32BD /* Deferrable.h */,
+				1A09B0C31CDB9D9900DE32BD /* Each.h */,
+				1A09B0C41CDB9D9900DE32BD /* Each.m */,
+				1A09B0C51CDB9D9900DE32BD /* Event.h */,
+				1A09B0C61CDB9D9900DE32BD /* Event.m */,
+				1A09B0C71CDB9D9900DE32BD /* MockedTracker.h */,
+				1A09B0C81CDB9D9900DE32BD /* MockedTracker.m */,
+				1A09B0C91CDB9D9900DE32BD /* NSMutableArray+Shuffle.h */,
+				1A09B0CA1CDB9D9900DE32BD /* NSMutableArray+Shuffle.m */,
+				1A09B0CB1CDB9D9900DE32BD /* NSMutableArrayShuffleTests.m */,
+				1A09B0CC1CDB9D9900DE32BD /* NSString+MD5.h */,
+				1A09B0CD1CDB9D9900DE32BD /* NSString+MD5.m */,
+				1A09B0CE1CDB9D9900DE32BD /* SegmentIOTracker.h */,
+				1A09B0CF1CDB9D9900DE32BD /* SegmentIOTracker.m */,
+				1A09B0D01CDB9D9900DE32BD /* SegmentIOTrackerTests.m */,
+				1A09B0D11CDB9D9900DE32BD /* TimedEvent.h */,
+				1A09B0D21CDB9D9900DE32BD /* TimedEvent.m */,
+				1A09B0D31CDB9D9900DE32BD /* TimedEventTests.m */,
+				1A09B0D41CDB9D9900DE32BD /* TimedTracker.h */,
+				1A09B0D51CDB9D9900DE32BD /* TimedTracker.m */,
+				1A09B0D61CDB9D9900DE32BD /* TimedTrackerDelegate.h */,
+				1A09B0D71CDB9D9900DE32BD /* TimedTrackerTests.m */,
+				1A09B0D81CDB9D9900DE32BD /* Tracker.h */,
+				1A09B0D91CDB9D9900DE32BD /* Tracker.m */,
+				1A09B0DA1CDB9D9900DE32BD /* TrackerManager.h */,
+				1A09B0DB1CDB9D9900DE32BD /* TrackerManager.m */,
+				1A09B0DC1CDB9D9900DE32BD /* TrackerPersister.h */,
+				1A09B0DD1CDB9D9900DE32BD /* TrackerPersister.m */,
+				1A09B0DE1CDB9D9900DE32BD /* TrackerTests.m */,
+				1A09B0461CDB99A100DE32BD /* Info.plist */,
+			);
+			path = MPTracker;
+			sourceTree = "<group>";
+		};
+		1A09B04F1CDB99A200DE32BD /* MPTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				1A09B0501CDB99A200DE32BD /* MPTrackerTests.m */,
+				1A09B0521CDB99A200DE32BD /* Info.plist */,
+			);
+			path = MPTrackerTests;
+			sourceTree = "<group>";
+		};
 		1AB82BF21CC40BDD00E348D4 = {
 			isa = PBXGroup;
 			children = (
 				1AB82BFE1CC40BDD00E348D4 /* MPPresentation */,
 				1AB82C0A1CC40BDD00E348D4 /* MPPresentationTests */,
+				1A09B0431CDB99A100DE32BD /* MPTracker */,
+				1A09B04F1CDB99A200DE32BD /* MPTrackerTests */,
 				1AB82BFD1CC40BDD00E348D4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -174,6 +275,8 @@
 			children = (
 				1AB82BFC1CC40BDD00E348D4 /* MagicPresenter.framework */,
 				1AB82C061CC40BDD00E348D4 /* MagicPresenter.xctest */,
+				1A09B0421CDB99A100DE32BD /* MPTracker.framework */,
+				1A09B04B1CDB99A100DE32BD /* MPTrackerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,7 +284,6 @@
 		1AB82BFE1CC40BDD00E348D4 /* MPPresentation */ = {
 			isa = PBXGroup;
 			children = (
-				1AE44D5B1CD2116700B48B92 /* Tracker */,
 				1AB82C011CC40BDD00E348D4 /* Info.plist */,
 				1AB82BFF1CC40BDD00E348D4 /* MagicPresenter.h */,
 				1AB82C161CC40BEC00E348D4 /* MPPresentationController.h */,
@@ -209,77 +311,42 @@
 			path = MPPresentationTests;
 			sourceTree = "<group>";
 		};
-		1AE44D5B1CD2116700B48B92 /* Tracker */ = {
-			isa = PBXGroup;
-			children = (
-				1AE44CFB1CD2116100B48B92 /* Deferrable.h */,
-				1AE44CFD1CD2116100B48B92 /* DeferableTracker.h */,
-				1AE44CFE1CD2116100B48B92 /* DeferableTracker.m */,
-				1AE44D001CD2116100B48B92 /* Each.h */,
-				1AE44D011CD2116100B48B92 /* Each.m */,
-				1AE44D021CD2116100B48B92 /* Event.h */,
-				1AE44D031CD2116100B48B92 /* Event.m */,
-				1AE44D041CD2116100B48B92 /* Tracker.h */,
-				1AE44D051CD2116100B48B92 /* Tracker.m */,
-				1AE44D061CD2116100B48B92 /* TimedTracker.h */,
-				1AE44D071CD2116100B48B92 /* TimedTracker.m */,
-				1AE44D081CD2116100B48B92 /* TimedTrackerDelegate.h */,
-				1AE44D091CD2116100B48B92 /* TimedEvent.h */,
-				1AE44D0A1CD2116100B48B92 /* TimedEvent.m */,
-				1AE44D0B1CD2116100B48B92 /* CounterTracker.h */,
-				1AE44D0C1CD2116100B48B92 /* CounterTracker.m */,
-				1AE44D111CD2116100B48B92 /* MockedTracker.h */,
-				1AE44D121CD2116100B48B92 /* MockedTracker.m */,
-				1AE44D611CD219FE00B48B92 /* SegmentIOTracker.h */,
-				1AE44D621CD219FE00B48B92 /* SegmentIOTracker.m */,
-				1AE44D651CD24C3100B48B92 /* SegmentIOTrackerTests.m */,
-				1AE44D171CD2116100B48B92 /* TrackerManager.h */,
-				1AE44D181CD2116100B48B92 /* TrackerManager.m */,
-				1AE44D191CD2116100B48B92 /* TrackerPersister.h */,
-				1AE44D1A1CD2116100B48B92 /* TrackerPersister.m */,
-				1AE44D261CD2116100B48B92 /* invalid.json */,
-				1AE44D271CD2116100B48B92 /* wrongtype.json */,
-				1AE44D281CD2116100B48B92 /* NSMutableArray+Shuffle.h */,
-				1AE44D291CD2116100B48B92 /* NSMutableArray+Shuffle.m */,
-				1AE44D2A1CD2116100B48B92 /* NSMutableArrayShuffleTests.m */,
-				1AE44CFF1CD2116100B48B92 /* DeferableTrackerTests.m */,
-				1AE44D1B1CD2116100B48B92 /* TrackerTests.m */,
-				1AE44D1C1CD2116100B48B92 /* TimedTrackerTests.m */,
-				1AE44D1D1CD2116100B48B92 /* TimedEventTests.m */,
-				1AE44D671CD24D7B00B48B92 /* NSString+MD5.h */,
-				1AE44D681CD24D7B00B48B92 /* NSString+MD5.m */,
-			);
-			name = Tracker;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		1A09B03F1CDB99A100DE32BD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A09B0EB1CDB9D9900DE32BD /* NSMutableArray+Shuffle.h in Headers */,
+				1A09B0E51CDB9D9900DE32BD /* Each.h in Headers */,
+				1A09B0F31CDB9D9900DE32BD /* TimedEvent.h in Headers */,
+				1A09B0DF1CDB9D9900DE32BD /* CounterTracker.h in Headers */,
+				1A09B0A81CDB99C100DE32BD /* MPTracker.h in Headers */,
+				1A09B0FE1CDB9D9900DE32BD /* TrackerPersister.h in Headers */,
+				1A09B0E71CDB9D9900DE32BD /* Event.h in Headers */,
+				1A09B0EE1CDB9D9900DE32BD /* NSString+MD5.h in Headers */,
+				1A09B0E91CDB9D9900DE32BD /* MockedTracker.h in Headers */,
+				1A09B0FC1CDB9D9900DE32BD /* TrackerManager.h in Headers */,
+				1A09B0E41CDB9D9900DE32BD /* Deferrable.h in Headers */,
+				1A09B0E11CDB9D9900DE32BD /* DeferableTracker.h in Headers */,
+				1A09B0F81CDB9D9900DE32BD /* TimedTrackerDelegate.h in Headers */,
+				1A09B0F01CDB9D9900DE32BD /* SegmentIOTracker.h in Headers */,
+				1A09B0F61CDB9D9900DE32BD /* TimedTracker.h in Headers */,
+				1A09B0FA1CDB9D9900DE32BD /* Tracker.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1AB82BF91CC40BDD00E348D4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1A8166FE1CC5311F00D70CBE /* MPPresentationWindowController.h in Headers */,
 				1AB82C1C1CC40BEC00E348D4 /* MPPresentationController.h in Headers */,
-				1AE44D581CD2116100B48B92 /* NSMutableArray+Shuffle.h in Headers */,
-				1AE44D3B1CD2116100B48B92 /* CounterTracker.h in Headers */,
 				1AE44CFA1CD1C60800B48B92 /* MagicPresenter.h in Headers */,
-				1AE44D411CD2116100B48B92 /* MockedTracker.h in Headers */,
-				1AE44D391CD2116100B48B92 /* TimedEvent.h in Headers */,
-				1AE44D691CD24D7B00B48B92 /* NSString+MD5.h in Headers */,
-				1AE44D491CD2116100B48B92 /* TrackerPersister.h in Headers */,
-				1AE44D341CD2116100B48B92 /* Tracker.h in Headers */,
-				1AE44D381CD2116100B48B92 /* TimedTrackerDelegate.h in Headers */,
-				1AE44D471CD2116100B48B92 /* TrackerManager.h in Headers */,
 				1AB82C1F1CC40BEC00E348D4 /* MPPresentationViewController.h in Headers */,
-				1AE44D321CD2116100B48B92 /* Event.h in Headers */,
 				1AB82C211CC40BEC00E348D4 /* MPSlide.h in Headers */,
-				1AE44D301CD2116100B48B92 /* Each.h in Headers */,
-				1AE44D2D1CD2116100B48B92 /* DeferableTracker.h in Headers */,
-				1AE44D361CD2116100B48B92 /* TimedTracker.h in Headers */,
-				1AE44D631CD219FE00B48B92 /* SegmentIOTracker.h in Headers */,
 				1A8167021CC5321800D70CBE /* MPPresentationWindow.h in Headers */,
-				1AE44D2B1CD2116100B48B92 /* Deferrable.h in Headers */,
 				1A74A55C1CC7E0CD00404E28 /* NSWindow+FullScreenMode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +354,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		1A09B0411CDB99A100DE32BD /* MPTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A09B0571CDB99A200DE32BD /* Build configuration list for PBXNativeTarget "MPTracker" */;
+			buildPhases = (
+				1A09B03D1CDB99A100DE32BD /* Sources */,
+				1A09B03E1CDB99A100DE32BD /* Frameworks */,
+				1A09B03F1CDB99A100DE32BD /* Headers */,
+				1A09B0401CDB99A100DE32BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MPTracker;
+			productName = MPTracker;
+			productReference = 1A09B0421CDB99A100DE32BD /* MPTracker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1A09B04A1CDB99A100DE32BD /* MPTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A09B0581CDB99A200DE32BD /* Build configuration list for PBXNativeTarget "MPTrackerTests" */;
+			buildPhases = (
+				1A09B0471CDB99A100DE32BD /* Sources */,
+				1A09B0481CDB99A100DE32BD /* Frameworks */,
+				1A09B0491CDB99A100DE32BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A09B04E1CDB99A200DE32BD /* PBXTargetDependency */,
+			);
+			name = MPTrackerTests;
+			productName = MPTrackerTests;
+			productReference = 1A09B04B1CDB99A100DE32BD /* MPTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1AB82BFB1CC40BDD00E348D4 /* MagicPresenter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1AB82C101CC40BDD00E348D4 /* Build configuration list for PBXNativeTarget "MagicPresenter" */;
@@ -301,6 +404,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1A09B0BA1CDB9C9F00DE32BD /* PBXTargetDependency */,
 			);
 			name = MagicPresenter;
 			productName = Presentation;
@@ -318,6 +422,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1AC2F9391CDC9352003FFB58 /* PBXTargetDependency */,
 				1AB82C091CC40BDD00E348D4 /* PBXTargetDependency */,
 			);
 			name = MagicPresenterTests;
@@ -335,6 +440,12 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = MagicSketch;
 				TargetAttributes = {
+					1A09B0411CDB99A100DE32BD = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					1A09B04A1CDB99A100DE32BD = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					1AB82BFB1CC40BDD00E348D4 = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -357,18 +468,32 @@
 			targets = (
 				1AB82BFB1CC40BDD00E348D4 /* MagicPresenter */,
 				1AB82C051CC40BDD00E348D4 /* MagicPresenterTests */,
+				1A09B0411CDB99A100DE32BD /* MPTracker */,
+				1A09B04A1CDB99A100DE32BD /* MPTrackerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1A09B0401CDB99A100DE32BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A09B0491CDB99A100DE32BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1AB82BFA1CC40BDD00E348D4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1AB82C1E1CC40BEC00E348D4 /* MPPresentation.storyboard in Resources */,
-				1AE44D571CD2116100B48B92 /* wrongtype.json in Resources */,
-				1AE44D561CD2116100B48B92 /* invalid.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,33 +518,54 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd ~/Projects/MagicPresenter/\n#./install.sh\nkillall Sketch\nkillall Sketch\\ Beta\n./test.sh";
+			shellScript = "cd \"${PROJECT_DIR}\"\n#./install.sh\nkillall Sketch\nkillall Sketch\\ Beta\n./test.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1A09B03D1CDB99A100DE32BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A09B0FB1CDB9D9900DE32BD /* Tracker.m in Sources */,
+				1A09B0EC1CDB9D9900DE32BD /* NSMutableArray+Shuffle.m in Sources */,
+				1A09B0F41CDB9D9900DE32BD /* TimedEvent.m in Sources */,
+				1A09B0EF1CDB9D9900DE32BD /* NSString+MD5.m in Sources */,
+				1A09B0F11CDB9D9900DE32BD /* SegmentIOTracker.m in Sources */,
+				1A09B0E01CDB9D9900DE32BD /* CounterTracker.m in Sources */,
+				1A09B0E81CDB9D9900DE32BD /* Event.m in Sources */,
+				1A09B0E61CDB9D9900DE32BD /* Each.m in Sources */,
+				1A09B0E21CDB9D9900DE32BD /* DeferableTracker.m in Sources */,
+				1A09B0F71CDB9D9900DE32BD /* TimedTracker.m in Sources */,
+				1A09B0EA1CDB9D9900DE32BD /* MockedTracker.m in Sources */,
+				1A09B0FF1CDB9D9900DE32BD /* TrackerPersister.m in Sources */,
+				1A09B0FD1CDB9D9900DE32BD /* TrackerManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A09B0471CDB99A100DE32BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A09B1061CDB9DA400DE32BD /* TrackerTests.m in Sources */,
+				1A09B1031CDB9DA400DE32BD /* SegmentIOTrackerTests.m in Sources */,
+				1A09B1041CDB9DA400DE32BD /* TimedEventTests.m in Sources */,
+				1A09B1021CDB9DA400DE32BD /* NSMutableArrayShuffleTests.m in Sources */,
+				1A09B0511CDB99A200DE32BD /* MPTrackerTests.m in Sources */,
+				1A09B1051CDB9DA400DE32BD /* TimedTrackerTests.m in Sources */,
+				1A09B1011CDB9DA400DE32BD /* DeferableTrackerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1AB82BF71CC40BDD00E348D4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AE44D371CD2116100B48B92 /* TimedTracker.m in Sources */,
-				1AE44D311CD2116100B48B92 /* Each.m in Sources */,
 				1A74A55D1CC7E0CD00404E28 /* NSWindow+FullScreenMode.m in Sources */,
-				1AE44D4A1CD2116100B48B92 /* TrackerPersister.m in Sources */,
-				1AE44D3C1CD2116100B48B92 /* CounterTracker.m in Sources */,
-				1AE44D331CD2116100B48B92 /* Event.m in Sources */,
-				1AE44D2E1CD2116100B48B92 /* DeferableTracker.m in Sources */,
 				1AB82C201CC40BEC00E348D4 /* MPPresentationViewController.m in Sources */,
-				1AE44D3A1CD2116100B48B92 /* TimedEvent.m in Sources */,
 				1A8166FF1CC5311F00D70CBE /* MPPresentationWindowController.m in Sources */,
-				1AE44D351CD2116100B48B92 /* Tracker.m in Sources */,
 				1AB82C1D1CC40BEC00E348D4 /* MPPresentationController.m in Sources */,
-				1AE44D6A1CD24D7B00B48B92 /* NSString+MD5.m in Sources */,
-				1AE44D421CD2116100B48B92 /* MockedTracker.m in Sources */,
-				1AE44D591CD2116100B48B92 /* NSMutableArray+Shuffle.m in Sources */,
 				1A8167031CC5321800D70CBE /* MPPresentationWindow.m in Sources */,
-				1AE44D481CD2116100B48B92 /* TrackerManager.m in Sources */,
-				1AE44D641CD219FE00B48B92 /* SegmentIOTracker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,12 +573,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AE44D661CD24C3100B48B92 /* SegmentIOTrackerTests.m in Sources */,
-				1AE44D5F1CD211CA00B48B92 /* DeferableTrackerTests.m in Sources */,
-				1AE44D5E1CD2119100B48B92 /* TimedEventTests.m in Sources */,
-				1AE44D5C1CD2119100B48B92 /* TrackerTests.m in Sources */,
-				1AE44D601CD211E200B48B92 /* NSMutableArrayShuffleTests.m in Sources */,
-				1AE44D5D1CD2119100B48B92 /* TimedTrackerTests.m in Sources */,
 				1AB82C0C1CC40BDD00E348D4 /* PresentationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,14 +580,87 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1A09B04E1CDB99A200DE32BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A09B0411CDB99A100DE32BD /* MPTracker */;
+			targetProxy = 1A09B04D1CDB99A200DE32BD /* PBXContainerItemProxy */;
+		};
+		1A09B0BA1CDB9C9F00DE32BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A09B0411CDB99A100DE32BD /* MPTracker */;
+			targetProxy = 1A09B0B91CDB9C9F00DE32BD /* PBXContainerItemProxy */;
+		};
 		1AB82C091CC40BDD00E348D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1AB82BFB1CC40BDD00E348D4 /* MagicPresenter */;
 			targetProxy = 1AB82C081CC40BDD00E348D4 /* PBXContainerItemProxy */;
 		};
+		1AC2F9391CDC9352003FFB58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A09B0411CDB99A100DE32BD /* MPTracker */;
+			targetProxy = 1AC2F9381CDC9352003FFB58 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1A09B0531CDB99A200DE32BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = MPTracker/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.magicsketch.MPTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1A09B0541CDB99A200DE32BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = MPTracker/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.magicsketch.MPTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		1A09B0551CDB99A200DE32BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MPTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.magicsketch.MPTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1A09B0561CDB99A200DE32BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MPTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.magicsketch.MPTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		1AB82C0E1CC40BDD00E348D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -478,6 +691,8 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"BUILD_ROOT=@\\\"\"$(BUILD_ROOT)\"\\\"",
+					"PROJECT_DIR=@\\\"\"$PROJECT_DIR\"\\\"",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -594,6 +809,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1A09B0571CDB99A200DE32BD /* Build configuration list for PBXNativeTarget "MPTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A09B0531CDB99A200DE32BD /* Debug */,
+				1A09B0541CDB99A200DE32BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A09B0581CDB99A200DE32BD /* Build configuration list for PBXNativeTarget "MPTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A09B0551CDB99A200DE32BD /* Debug */,
+				1A09B0561CDB99A200DE32BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1AB82BF61CC40BDD00E348D4 /* Build configuration list for PBXProject "MagicPresenter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

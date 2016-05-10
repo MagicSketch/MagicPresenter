@@ -66,11 +66,17 @@
     NSLog(@"keyDown %@", theEvent);
     switch (theEvent.keyCode) {
         case 126: // Up
+            [[TrackerManager sharedInstance] track:@"Press UpArrow" properties:nil];
+            [self goPreviousPage];
+            break;
         case 123: // Left
             [[TrackerManager sharedInstance] track:@"Press LeftArrow" properties:nil];
             [self goPreviousPage];
             break;
         case 125: // Down
+            [[TrackerManager sharedInstance] track:@"Press DownArrow" properties:nil];
+            [self goNextPage];
+            break;
         case 124: // Right
             [[TrackerManager sharedInstance] track:@"Press RightArrow" properties:nil];
             [self goNextPage];
