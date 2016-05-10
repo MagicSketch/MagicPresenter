@@ -24,5 +24,7 @@
 	<string>Copyright © 2016 MagicSketch. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
+	<key>ProjectDIR</key>
+	<string>$(PROJECT_DIR)</string>
 </dict>
 </plist>
