@@ -1,0 +1,13 @@
+{
+  "title": "Magic Presenter",
+  "icon": "Icon.icns",
+  "background": "Background.png",
+  "icon-size": 80,
+  "window": {
+    "position": { "x": 250, "y": 250 },
+    "size": { "width": 500, "height": 320 }
+  },
+  "contents": [
+    { "x": 250, "y": 148, "type": "file", "path": "MagicPresenter.sketchplugin" }
+  ]
+}

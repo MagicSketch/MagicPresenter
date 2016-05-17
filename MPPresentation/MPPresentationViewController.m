@@ -9,6 +9,7 @@
 #import "MPPresentationViewController.h"
 #import "NSWindow+FullScreenMode.h"
 #import "TrackerManager.h"
+#import "MPHelper.h"
 
 @interface MPPresentationViewController ()
 
@@ -27,10 +28,6 @@
     [super viewDidLoad];
     // Do view setup here.
 
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self.view.window toggleFullScreen:nil];
-//    });
-
     self.view.wantsLayer = YES;
     self.view.layer.backgroundColor = [NSColor blackColor].CGColor;
 
@@ -41,6 +38,10 @@
 - (void)viewWillAppear {
     [super viewWillAppear];
     [self centerWindow];
+}
+
+- (void)dealloc {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(becomesIdle:) object:self];
 }
 
 - (void)reloadData {
@@ -62,42 +63,79 @@
     [window setFrame:NSMakeRect(xPos, yPos, _size.width, _size.height) display:YES];
 }
 
+- (void)mouseMoved:(NSEvent *)theEvent {
+    [super mouseMoved:theEvent];
+    DLog(@"controller mouseMoved");
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(becomesIdle:) object:self];
+    [self performSelector:@selector(becomesIdle:) withObject:self afterDelay:2];
+}
+
 - (void)keyDown:(NSEvent *)theEvent {
-    NSLog(@"keyDown %@", theEvent);
-    switch (theEvent.keyCode) {
-        case 126: // Up
-            [[TrackerManager sharedInstance] track:@"Press UpArrow" properties:nil];
-            [self goPreviousPage];
-            break;
-        case 123: // Left
-            [[TrackerManager sharedInstance] track:@"Press LeftArrow" properties:nil];
-            [self goPreviousPage];
-            break;
-        case 125: // Down
-            [[TrackerManager sharedInstance] track:@"Press DownArrow" properties:nil];
-            [self goNextPage];
-            break;
-        case 124: // Right
-            [[TrackerManager sharedInstance] track:@"Press RightArrow" properties:nil];
-            [self goNextPage];
-            break;
-        case 53: // Esc
-            [[TrackerManager sharedInstance] track:@"Press Esc" properties:nil];
-            if ([self.view.window mn_isFullScreen]) {
-                [self.view.window toggleFullScreen:nil];
-            } else {
-                [self.view.window close];
-            }
-            break;
-        case 36: // Enter
-            [[TrackerManager sharedInstance] track:@"Press Enter" properties:nil];
-            if ((theEvent.modifierFlags & NSCommandKeyMask) == NSCommandKeyMask) {
-                [self.view.window toggleFullScreen:nil];
-            }
-            break;
-        default:
-            break;
+    DLog(@"keyDown %@", theEvent);
+    NSString *string = [theEvent charactersIgnoringModifiers];
+
+    if ([string length] > 0) {
+        unichar key = [string characterAtIndex:0];
+        DLog(@"key %d", key);
+
+        switch (key) {
+            case NSUpArrowFunctionKey: // Up
+                [[TrackerManager sharedInstance] track:@"Press UpArrow" properties:nil];
+                [self goPreviousPage];
+                break;
+            case NSLeftArrowFunctionKey: // Left
+                [[TrackerManager sharedInstance] track:@"Press LeftArrow" properties:nil];
+                [self goPreviousPage];
+                break;
+            case NSDownArrowFunctionKey: // Down
+                [[TrackerManager sharedInstance] track:@"Press DownArrow" properties:nil];
+                [self goNextPage];
+                break;
+            case NSRightArrowFunctionKey: // Right
+                [[TrackerManager sharedInstance] track:@"Press RightArrow" properties:nil];
+                [self goNextPage];
+                break;
+            case 27: // Esc
+                [[TrackerManager sharedInstance] track:@"Press Esc" properties:nil];
+                if ([self isFullScreen]) {
+                    [self exitFullScreen];
+                } else {
+                    [self exitWindow];
+                }
+                break;
+            case 13: // Enter
+                [[TrackerManager sharedInstance] track:@"Press Enter" properties:nil];
+                if ((theEvent.modifierFlags & NSCommandKeyMask) == NSCommandKeyMask) {
+                    [self goFullScreen];
+                }
+                break;
+            default:
+                break;
+        }
     }
+
+}
+
+- (BOOL)isFullScreen {
+    return [self.view.window mn_isFullScreen];
+}
+
+- (void)goFullScreen {
+    if ( ! [self.view.window mn_isFullScreen]) {
+        [self.view.window toggleFullScreen:nil];
+        [self performSelector:@selector(becomesIdle:) withObject:self afterDelay:2];
+    }
+}
+
+- (void)exitFullScreen {
+    if ([self.view.window mn_isFullScreen]) {
+        [self.view.window toggleFullScreen:nil];
+    }
+}
+
+- (void)exitWindow {
+    [self.view.window close];
+
 }
 
 - (void)goPreviousPage {
@@ -111,6 +149,13 @@
     if (_index - 1 >= 0) {
         _index--;
         [self reloadData];
+    }
+}
+
+- (void)becomesIdle:(id)sender {
+    DLog(@"becomesIdle");
+    if ([self isFullScreen]) {
+        [NSCursor setHiddenUntilMouseMoves:YES];
     }
 }
 
