@@ -20,25 +20,11 @@
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-
-    [self.window makeKeyAndOrderFront:self];
+        [self.window makeKeyAndOrderFront:self];
     });
 
     [self.window setAcceptsMouseMovedEvents:YES];
     [self.window makeFirstResponder:self.contentViewController];
-}
-
-- (void)keyDown:(NSEvent *)theEvent {
-    if ([self.contentViewController respondsToSelector:@selector(keyDown:)]) {
-        [self.contentViewController keyDown:theEvent];
-    } else {
-        [super keyDown:theEvent];
-    }
-}
-
-- (void)mouseMoved:(NSEvent *)theEvent {
-    [super mouseMoved:theEvent];
-    NSLog(@"mouseMove2");
 }
 
 @end

@@ -40,6 +40,10 @@
     [self centerWindow];
 }
 
+- (void)dealloc {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(becomesIdle:) object:self];
+}
+
 - (void)reloadData {
     NSImage *image = [_slides[_index] image];
     self.imageView.image = image;
