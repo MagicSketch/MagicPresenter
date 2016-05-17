@@ -28,10 +28,6 @@
     [super viewDidLoad];
     // Do view setup here.
 
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self.view.window toggleFullScreen:nil];
-//    });
-
     self.view.wantsLayer = YES;
     self.view.layer.backgroundColor = [NSColor blackColor].CGColor;
 
@@ -63,6 +59,13 @@
     [window setFrame:NSMakeRect(xPos, yPos, _size.width, _size.height) display:YES];
 }
 
+- (void)mouseMoved:(NSEvent *)theEvent {
+    [super mouseMoved:theEvent];
+    DLog(@"controller mouseMoved");
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(becomesIdle:) object:self];
+    [self performSelector:@selector(becomesIdle:) withObject:self afterDelay:2];
+}
+
 - (void)keyDown:(NSEvent *)theEvent {
     DLog(@"keyDown %@", theEvent);
     NSString *string = [theEvent charactersIgnoringModifiers];
@@ -90,22 +93,44 @@
                 break;
             case 27: // Esc
                 [[TrackerManager sharedInstance] track:@"Press Esc" properties:nil];
-                if ([self.view.window mn_isFullScreen]) {
-                    [self.view.window toggleFullScreen:nil];
+                if ([self isFullScreen]) {
+                    [self exitFullScreen];
                 } else {
-                    [self.view.window close];
+                    [self exitWindow];
                 }
                 break;
             case 13: // Enter
                 [[TrackerManager sharedInstance] track:@"Press Enter" properties:nil];
                 if ((theEvent.modifierFlags & NSCommandKeyMask) == NSCommandKeyMask) {
-                    [self.view.window toggleFullScreen:nil];
+                    [self goFullScreen];
                 }
                 break;
             default:
                 break;
         }
     }
+
+}
+
+- (BOOL)isFullScreen {
+    return [self.view.window mn_isFullScreen];
+}
+
+- (void)goFullScreen {
+    if ( ! [self.view.window mn_isFullScreen]) {
+        [self.view.window toggleFullScreen:nil];
+        [self performSelector:@selector(becomesIdle:) withObject:self afterDelay:2];
+    }
+}
+
+- (void)exitFullScreen {
+    if ([self.view.window mn_isFullScreen]) {
+        [self.view.window toggleFullScreen:nil];
+    }
+}
+
+- (void)exitWindow {
+    [self.view.window close];
 
 }
 
@@ -120,6 +145,13 @@
     if (_index - 1 >= 0) {
         _index--;
         [self reloadData];
+    }
+}
+
+- (void)becomesIdle:(id)sender {
+    DLog(@"becomesIdle");
+    if ([self isFullScreen]) {
+        [NSCursor setHiddenUntilMouseMoves:YES];
     }
 }
 

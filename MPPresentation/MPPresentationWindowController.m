@@ -23,6 +23,9 @@
 
     [self.window makeKeyAndOrderFront:self];
     });
+
+    [self.window setAcceptsMouseMovedEvents:YES];
+    [self.window makeFirstResponder:self.contentViewController];
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
@@ -31,6 +34,11 @@
     } else {
         [super keyDown:theEvent];
     }
+}
+
+- (void)mouseMoved:(NSEvent *)theEvent {
+    [super mouseMoved:theEvent];
+    NSLog(@"mouseMove2");
 }
 
 @end
