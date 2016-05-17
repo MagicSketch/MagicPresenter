@@ -25,4 +25,12 @@
     });
 }
 
+- (void)keyDown:(NSEvent *)theEvent {
+    if ([self.contentViewController respondsToSelector:@selector(keyDown:)]) {
+        [self.contentViewController keyDown:theEvent];
+    } else {
+        [super keyDown:theEvent];
+    }
+}
+
 @end

@@ -9,6 +9,7 @@
 #import "MPPresentationViewController.h"
 #import "NSWindow+FullScreenMode.h"
 #import "TrackerManager.h"
+#import "MPHelper.h"
 
 @interface MPPresentationViewController ()
 
@@ -63,41 +64,49 @@
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
-    NSLog(@"keyDown %@", theEvent);
-    switch (theEvent.keyCode) {
-        case 126: // Up
-            [[TrackerManager sharedInstance] track:@"Press UpArrow" properties:nil];
-            [self goPreviousPage];
-            break;
-        case 123: // Left
-            [[TrackerManager sharedInstance] track:@"Press LeftArrow" properties:nil];
-            [self goPreviousPage];
-            break;
-        case 125: // Down
-            [[TrackerManager sharedInstance] track:@"Press DownArrow" properties:nil];
-            [self goNextPage];
-            break;
-        case 124: // Right
-            [[TrackerManager sharedInstance] track:@"Press RightArrow" properties:nil];
-            [self goNextPage];
-            break;
-        case 53: // Esc
-            [[TrackerManager sharedInstance] track:@"Press Esc" properties:nil];
-            if ([self.view.window mn_isFullScreen]) {
-                [self.view.window toggleFullScreen:nil];
-            } else {
-                [self.view.window close];
-            }
-            break;
-        case 36: // Enter
-            [[TrackerManager sharedInstance] track:@"Press Enter" properties:nil];
-            if ((theEvent.modifierFlags & NSCommandKeyMask) == NSCommandKeyMask) {
-                [self.view.window toggleFullScreen:nil];
-            }
-            break;
-        default:
-            break;
+    DLog(@"keyDown %@", theEvent);
+    NSString *string = [theEvent charactersIgnoringModifiers];
+
+    if ([string length] > 0) {
+        unichar key = [string characterAtIndex:0];
+        DLog(@"key %d", key);
+
+        switch (key) {
+            case NSUpArrowFunctionKey: // Up
+                [[TrackerManager sharedInstance] track:@"Press UpArrow" properties:nil];
+                [self goPreviousPage];
+                break;
+            case NSLeftArrowFunctionKey: // Left
+                [[TrackerManager sharedInstance] track:@"Press LeftArrow" properties:nil];
+                [self goPreviousPage];
+                break;
+            case NSDownArrowFunctionKey: // Down
+                [[TrackerManager sharedInstance] track:@"Press DownArrow" properties:nil];
+                [self goNextPage];
+                break;
+            case NSRightArrowFunctionKey: // Right
+                [[TrackerManager sharedInstance] track:@"Press RightArrow" properties:nil];
+                [self goNextPage];
+                break;
+            case 27: // Esc
+                [[TrackerManager sharedInstance] track:@"Press Esc" properties:nil];
+                if ([self.view.window mn_isFullScreen]) {
+                    [self.view.window toggleFullScreen:nil];
+                } else {
+                    [self.view.window close];
+                }
+                break;
+            case 13: // Enter
+                [[TrackerManager sharedInstance] track:@"Press Enter" properties:nil];
+                if ((theEvent.modifierFlags & NSCommandKeyMask) == NSCommandKeyMask) {
+                    [self.view.window toggleFullScreen:nil];
+                }
+                break;
+            default:
+                break;
+        }
     }
+
 }
 
 - (void)goPreviousPage {

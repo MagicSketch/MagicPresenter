@@ -157,6 +157,7 @@
 		1A8166FD1CC5311F00D70CBE /* MPPresentationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPresentationWindowController.m; sourceTree = "<group>"; };
 		1A8167001CC5321800D70CBE /* MPPresentationWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPresentationWindow.h; sourceTree = "<group>"; };
 		1A8167011CC5321800D70CBE /* MPPresentationWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPresentationWindow.m; sourceTree = "<group>"; };
+		1AB05AB11CEADF8D00227805 /* MPHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPHelper.h; sourceTree = "<group>"; };
 		1AB82BFC1CC40BDD00E348D4 /* MagicPresenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MagicPresenter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB82BFF1CC40BDD00E348D4 /* MagicPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicPresenter.h; sourceTree = "<group>"; };
 		1AB82C011CC40BDD00E348D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -286,6 +287,7 @@
 			children = (
 				1AB82C011CC40BDD00E348D4 /* Info.plist */,
 				1AB82BFF1CC40BDD00E348D4 /* MagicPresenter.h */,
+				1AB05AB11CEADF8D00227805 /* MPHelper.h */,
 				1AB82C161CC40BEC00E348D4 /* MPPresentationController.h */,
 				1AB82C171CC40BEC00E348D4 /* MPPresentationController.m */,
 				1AB82C181CC40BEC00E348D4 /* MPPresentation.storyboard */,
@@ -700,7 +702,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -740,7 +742,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
