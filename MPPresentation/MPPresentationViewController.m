@@ -9,6 +9,7 @@
 #import "MPPresentationViewController.h"
 #import "NSWindow+FullScreenMode.h"
 #import "TrackerManager.h"
+#import "MPHelper.h"
 
 @interface MPPresentationViewController ()
 
@@ -63,7 +64,7 @@
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
-    NSLog(@"keyDown %@", theEvent);
+    DLog(@"keyDown %@", theEvent);
     switch (theEvent.keyCode) {
         case 126: // Up
             [[TrackerManager sharedInstance] track:@"Press UpArrow" properties:nil];
