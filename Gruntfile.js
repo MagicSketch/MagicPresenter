@@ -42,6 +42,12 @@ module.exports = function(grunt) {
           'appdmg release.json MagicPresenter.dmg'
         ].join(' && ')
       },
+      commit: {
+        command: [
+          'git add .',
+          'git commit -m "Update binary"'
+        ].join(' && ')
+      },
       tag: {
         command: [
           'git tag -a <%= version %> -m "<%= version %>"',
@@ -85,6 +91,6 @@ module.exports = function(grunt) {
   grunt.registerTask('archive', ['shell:archive']);
   grunt.registerTask('default', ['shell:build', 'shell:install', 'shell:archive']);
   grunt.registerTask('upload', ['shell:tag', 'gh_release']);
-  grunt.registerTask('release', ['shell:build', 'shell:archive', 'shell:tag', 'gh_release']);
+  grunt.registerTask('release', ['shell:build', 'shell:archive', 'shell:commit', 'shell:tag', 'gh_release']);
 
 };
