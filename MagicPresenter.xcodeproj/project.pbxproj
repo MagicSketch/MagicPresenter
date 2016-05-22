@@ -520,7 +520,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"${PROJECT_DIR}\"\n#./install.sh\nkillall Sketch\nkillall Sketch\\ Beta\n./test.sh";
+			shellScript = "cd \"${PROJECT_DIR}\"\ngrunt kill --force\ngrunt test";
 		};
 /* End PBXShellScriptBuildPhase section */
 

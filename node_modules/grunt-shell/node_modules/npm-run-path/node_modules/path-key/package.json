@@ -1,0 +1,66 @@
+{
+  "name": "path-key",
+  "version": "1.0.0",
+  "description": "Get the PATH environment variable key cross-platform",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/path-key.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "path",
+    "key",
+    "environment",
+    "env",
+    "variable",
+    "var",
+    "get",
+    "cross-platform",
+    "windows"
+  ],
+  "devDependencies": {
+    "ava": "*",
+    "xo": "*"
+  },
+  "gitHead": "7f9703b3ae62da971bae635d561b1a6b80102cc1",
+  "bugs": {
+    "url": "https://github.com/sindresorhus/path-key/issues"
+  },
+  "homepage": "https://github.com/sindresorhus/path-key",
+  "_id": "path-key@1.0.0",
+  "_shasum": "5d53d578019646c0d68800db4e146e6bdc2ac7af",
+  "_from": "path-key@>=1.0.0 <2.0.0",
+  "_npmVersion": "2.14.12",
+  "_nodeVersion": "4.2.4",
+  "_npmUser": {
+    "name": "sindresorhus",
+    "email": "sindresorhus@gmail.com"
+  },
+  "dist": {
+    "shasum": "5d53d578019646c0d68800db4e146e6bdc2ac7af",
+    "tarball": "https://registry.npmjs.org/path-key/-/path-key-1.0.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/path-key/-/path-key-1.0.0.tgz",
+  "readme": "ERROR: No README data found!"
+}
