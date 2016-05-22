@@ -1,22 +1,25 @@
 {
-	"name": "magicpresenter",
-	"version": "1.0.0",
-	"description": "Sketch Plugin to Present Slides or Deck directly in Sketch 3",
-	"homepage": "https://github.com/MagicSketch/MagicPresenter#readme",
-	"bugs": {
-		"url": "https://github.com/MagicSketch/MagicPresenter/issues"
-	},
-	"license": "ISC",
-	"main": "Gruntfile.js",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/MagicSketch/MagicPresenter.git"
-	},
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"devDependencies": {
-		"grunt": "^0.4.5",
-		"grunt-shell": "^1.3.0",
-	}
+  "name": "magicpresenter",
+  "version": "1.0.0",
+  "description": "Sketch Plugin to Present Slides or Deck directly in Sketch 3",
+  "homepage": "https://github.com/MagicSketch/MagicPresenter#readme",
+  "bugs": {
+    "url": "https://github.com/MagicSketch/MagicPresenter/issues"
+  },
+  "license": "ISC",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MagicSketch/MagicPresenter.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "curlrequest": "^0.3.10",
+    "grunt": "^0.4.5",
+    "grunt-gh-release": "0.0.2",
+    "grunt-shell": "^1.3.0",
+    "underscore": "^1.8.3"
+  }
 }
