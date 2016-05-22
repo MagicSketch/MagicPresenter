@@ -4,10 +4,22 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     home: process.env.HOME,
     version: "v0.3",
-    xcode: {
+    appdmg: {
       options: {
-        project: 'MagicPresenter.xcodeproj',
-        scheme: 'Release'
+        "title": "Magic Presenter",
+        "icon": "Icon.icns",
+        "background": "Background.png",
+        "icon-size": 100,
+        "window": {
+          "position": { "x": 250, "y": 250 },
+          "size": { "width": 500, "height": 320 }
+        },
+        "contents": [
+          { "x": 250, "y": 150, "type": "file", "path": "MagicPresenter.sketchplugin" }
+        ]
+      },
+      target: {
+        dest: 'MagicPresenter.dmg'
       }
     },
     shell: {
@@ -35,11 +47,9 @@ module.exports = function(grunt) {
           'xctool -scheme MagicPresenter -configuration Release',
         ].join(' && ')
       },
-      archive: {
+      beforeappdmg: {
         command: [
-          'echo "Creating MagicPresenter.dmg"',
           'rm -rf MagicPresenter.dmg',
-          'appdmg release.json MagicPresenter.dmg'
         ].join(' && ')
       },
       commit: {
@@ -83,14 +93,17 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-gh-release');
+  grunt.loadNpmTasks('grunt-appdmg');
 
   grunt.registerTask('kill', ['shell:kill']);
   grunt.registerTask('test', ['shell:test']);
   grunt.registerTask('install', ['shell:install']);
   grunt.registerTask('build', ['shell:build']);
-  grunt.registerTask('archive', ['shell:archive']);
-  grunt.registerTask('default', ['shell:build', 'shell:install', 'shell:archive']);
-  grunt.registerTask('upload', ['shell:tag', 'gh_release']);
-  grunt.registerTask('release', ['shell:build', 'shell:archive', 'shell:commit', 'shell:tag', 'gh_release']);
+  grunt.registerTask('archive', ['shell:beforeappdmg', 'appdmg']);
+  grunt.registerTask('default', ['build', 'install', 'archive']);
+  grunt.registerTask('tag', ['shell:tag']);
+  grunt.registerTask('upload', ['tag', 'gh_release']);
+  grunt.registerTask('release', ['build', 'archive', 'shell:commit', 'upload']);
+
 
 };
