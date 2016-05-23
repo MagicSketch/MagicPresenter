@@ -25,8 +25,7 @@ module.exports = function(grunt) {
     shell: {
       kill: {
         command: [
-          'killall Sketch > /dev/null 2>&1',
-          'killall Sketch\ Beta > /dev/null 2>&1',
+          'pkill Sketch || true',
         ].join(' && ')
       },
       test: {

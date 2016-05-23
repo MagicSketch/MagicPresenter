@@ -13,7 +13,18 @@
 		"url": "git+https://github.com/MagicSketch/MagicPresenter.git"
 	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "grunt test",
+		"kill": "grunt kill",
+		"install": "grunt install",
+		"build": "grunt build",
+		"archive": "grunt archive",
+		"upload": "grunt upload",
+		"tag": "grunt tag",
+		"release": "grunt release",
+		"echo": "echo $npm_package_name $npm_package_config_version $npm_config_version"
+	},
+	"config": {
+		"version": "",
 	},
 	"devDependencies": {
 		"curlrequest": "^0.3.10",
