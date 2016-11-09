@@ -24,7 +24,7 @@
 		"echo": "echo $npm_package_name $npm_package_config_version $npm_config_version"
 	},
 	"config": {
-		"version": "",
+		"version": ""
 	},
 	"devDependencies": {
 		"curlrequest": "^0.3.10",
