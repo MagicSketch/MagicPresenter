@@ -21,3 +21,5 @@ Pods
 
 Logs/*
 *.dmg
+
+node_modules/*
