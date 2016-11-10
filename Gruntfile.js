@@ -7,15 +7,14 @@ module.exports = function(grunt) {
     appdmg: {
       options: {
         "title": "Magic Presenter",
-        "icon": "Icon.icns",
-        "background": "Background.png",
+        "icon": "installer-mp-mounted.icns",
+        "background": "installer-mp-background.png",
         "icon-size": 100,
         "window": {
-          "position": { "x": 250, "y": 250 },
           "size": { "width": 500, "height": 320 }
         },
         "contents": [
-          { "x": 250, "y": 150, "type": "file", "path": "MagicPresenter.sketchplugin" }
+          { "x": 375, "y": 115, "type": "file", "path": "MagicPresenter.sketchplugin" }
         ]
       },
       target: {
