@@ -30,7 +30,7 @@
     ]
   },
   "identifier" : "design.magicmirror.presenter",
-  "version" : "1.1",
+  "version" : "1.1.1",
   "description" : "Present Your Deck/Slides in Sketch",
   "email" : "james@magicmirror.design",
   "name" : "Magic Presenter",
