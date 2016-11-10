@@ -35,13 +35,14 @@
 - (void)track:(NSString *)event properties:(NSDictionary *)properties {
     
     // if no location, save this event to array;
-    // return
+    // return;
     
     if ( ! _context) {
         if(!_isObtainingLocation){
             _isObtainingLocation = YES;
-            NSURLRequest *locationRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ip-api.com/json"]];
-            
+            NSURLRequest *locationRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://pro.ip-api.com/json/?key=XVLXbT9sFRPwcUv"]];
+            // NSURLRequest *locationRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ip-api.com/json"]];
+
 //            [[self class] sendRequest:locationRequest completion:^(NSDictionary *response, NSError *error) {
 //                NSLog(@"Segment: response %@ error %@", response, error);
 //                
@@ -61,7 +62,6 @@
                                                                              NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                                                                   options:0
                                                                                                                                     error:&parseError];
-                                                                             
                                                                              if(!parseError && !error){
                                                                                  _context =  [NSDictionary dictionaryWithDictionary:dict];
                                                                                  [weakSelf handlePendingRequests];
@@ -114,6 +114,7 @@
                                                                     userID:self.uuid
                                                                    context:self.context
                                                                 properties:fullProperties]];
+
     }
 
     return pendingRequests;
@@ -121,13 +122,12 @@
 
 - (void) handlePendingRequests{
     NSArray<NSURLRequest *> *requestList = [self preparedRequests];
-    
+
     for (NSURLRequest* request in requestList) {
         [[self class] sendRequest:request completion:^(NSDictionary *response, NSError *error) {
             NSLog(@"Segment: response %@ error %@", response, error);
         }];
     }
-    
     [_pendingEvents removeAllObjects];
 }
 
@@ -163,9 +163,13 @@
     {
         char *model = malloc(len*sizeof(char));
         sysctlbyname(ctlKey, model, &len, NULL, 0);
+        // free(model);
+   
+        NSString *m = [NSString stringWithUTF8String:model];
+
         free(model);
-        
-        return [NSString stringWithUTF8String:model];
+
+        return m;
     }
     
     return @"";
@@ -177,10 +181,10 @@
                                            userID:(NSString *)userID
                                           context:(NSDictionary *)context3
                                        properties:(NSDictionary *)properties {
+
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://api.segment.io/v1/track"]];
     request.HTTPMethod = @"POST";
     NSString *base64 = [[self class] basicAuthValueForUsername:key password:nil];
-
     NSAssert(base64, nil);
     [request setValue:[@"Basic " stringByAppendingString:base64] forHTTPHeaderField:@"Authorization"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -194,12 +198,13 @@
     if (event) {
         [dict addEntriesFromDictionary:@{@"event":event}];
     }
-    NSAssert(userID, @"userID should not be nil");
+    // NSAssert(userID, @"userID should not be nil");
     if (userID) {
         [dict addEntriesFromDictionary:@{@"userId":userID}];
     }
 
     {
+
         NSMutableDictionary *context = [[NSMutableDictionary alloc] init];
         [context addEntriesFromDictionary:@{
                                             @"locale":[NSString stringWithFormat:
@@ -215,7 +220,6 @@
                                                   @"height":@(screen.size.height),
                                                   @"density":@([[NSScreen mainScreen] backingScaleFactor])
                                                   }}];
-
         NSBundle *sketchBundle = [NSBundle bundleForClass:NSClassFromString(@"MSDocument")]; // Sketch App classes
         if ([[sketchBundle infoDictionary] count] > 0) {
             [context addEntriesFromDictionary:@{ @"app": @{
@@ -238,7 +242,6 @@
                                                      }}];
         
         
-        
         if(context3){
 //            NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
 //            f.numberStyle = NSNumberFormatterDecimalStyle;
@@ -253,14 +256,12 @@
             
             [context addEntriesFromDictionary:@{ @"ip": [context3 objectForKey:@"query"]  ?: @""}];
         }
-        
         [context addEntriesFromDictionary:@{ @"network":@{
                                                      @"wifi": @"",
                                                      @"cellular": @"",
                                                      @"carrier": @"",
                                                      @"bluetooth": @"",
                                                      } }];
-        
         [context addEntriesFromDictionary:@{ @"os":@{
                                                      @"name": @"",
                                                      @"version": [[NSProcessInfo processInfo] operatingSystemVersionString]
@@ -272,7 +273,6 @@
                                                      @"version": [currentBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
                                                      } }];
 
-
         [context addEntriesFromDictionary:@{ @"mixpanelLibrary":@"" }];
         
         NSString *timeString = [[self dateFormatter] stringFromDate:date];
@@ -281,6 +281,7 @@
                                          @"context": context,
                                          @"timestamp":timeString,
                                           }];
+
     }
 
 
@@ -288,6 +289,7 @@
                                                    options:0
                                                      error:nil];
     [request setHTTPBody:data];
+
     return request;
 }
 

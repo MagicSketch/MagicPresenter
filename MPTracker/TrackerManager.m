@@ -27,10 +27,10 @@ static TrackerManager *_tracker;
 
 + (instancetype)sharedInstance {
   if ( ! _tracker) {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-      _tracker = [[TrackerManager alloc] initWithTrackers:@[] identifier:nil];
-    });
+   static dispatch_once_t onceToken;
+   dispatch_once(&onceToken, ^{
+      _tracker = [[TrackerManager alloc] initWithTrackers:@[] identifier:@""];
+   });
   }
   return _tracker;
 }

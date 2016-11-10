@@ -45,9 +45,11 @@
 }
 
 - (void)reloadData {
-    NSImage *image = [_slides[_index] image];
-    self.imageView.image = image;
-    self.size = image.size;
+    if(_slides.count > 0){
+        NSImage *image = [_slides[_index] image];
+        self.imageView.image = image;
+        self.size = image.size;
+    }
 }
 
 - (void)setSlides:(NSArray *)slides atIndex:(NSUInteger)index {
