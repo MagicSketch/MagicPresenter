@@ -163,27 +163,35 @@ Sketch.dialog = function(context) {
 
 };
 
-Sketch.loadFramework = function(name, dir) {
+Sketch.loadFramework = function(name, dir, identifier) {
     var mocha = Mocha.sharedRuntime();
-    var directory = (Sketch.paths().root + dir);
+    var directory = (Sketch.paths(identifier).root + dir);
     /* jshint ignore:start */
     var success = [mocha loadFrameworkWithName:name inDirectory:directory];
     /* jshint ignore:end */
     return success;
 };
 
-Sketch.paths = function() {
+Sketch.paths = function(pluginIdentifier) {
+
+  var identifier = pluginIdentifier;
+
+  var resourcesPath = function(identifier) {
+      var _application = NSApplication.sharedApplication();
+      var _delegate = _application.delegate();
+      var _plugins = _delegate.pluginManager().plugins();
+      log("plugins: " + _plugins);
+      var _plugin = _plugins[identifier];
+      log("_plugin: " + _plugin);
+      var _path = _plugin.url().copy().path();
+      return _path;
+  };
+
+  var mocha = Mocha.sharedRuntime();
+  
+
   this.scriptPath = coscript.env().scriptURL.path()+"";
-  this.root = 	(function(){
-               var scriptPath = coscript.env().scriptURL.path() + "";
-               var NSScriptPath = NSString.stringWithString(scriptPath);
-
-               while(NSScriptPath.lastPathComponent().pathExtension() != "sketchplugin"){
-               NSScriptPath = NSScriptPath.stringByDeletingLastPathComponent();
-               }
-
-               return NSScriptPath+"";
-               })();
+  this.root = resourcesPath(identifier);
 
   this.installPath = (function() {
                      var appSupportPath = NSFileManager.defaultManager().URLsForDirectory_inDomains(NSApplicationSupportDirectory,NSUserDomainMask).firstObject().path();

@@ -6,7 +6,7 @@
 
 var present = function(context) {
     context.document.showMessage("Start Presentation");
-    load();
+    load("design.magicmirror.presenter");
     var cl = myClass();
     var object = cl.alloc().init();
     var artboards = Sketch.page(context).artboards();
@@ -21,9 +21,9 @@ var present = function(context) {
 
 
 
-var load = function() {
-    var loadedMPTracker = Sketch.loadFramework("MPTracker", "/Contents/Sketch");
-    var loadedMagicPresenter = Sketch.loadFramework("MagicPresenter", "/Contents/Sketch");
+var load = function(identifier) {
+    var loadedMPTracker = Sketch.loadFramework("MPTracker", "/Contents/Sketch", identifier);
+    var loadedMagicPresenter = Sketch.loadFramework("MagicPresenter", "/Contents/Sketch", identifier);
 
     log("loaded MagicPresenter: " + loadedMagicPresenter);
     log("loaded MPTracker: " + loadedMPTracker);
