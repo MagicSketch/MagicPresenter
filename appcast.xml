@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"><channel><title>Magic Presenter 2</title><link>https://magicsketch.io/presenter/</link><description>Present Your Deck/Slides in Sketch</description><language>en</language><item><title>MagicPresenter2 Release/0.2</title><description>Bug Fix</description><pubDate>2017-10-24T10:59:44.038Z</pubDate><enclosure sparkle:version="0.2" url="https://dl.magicsketch.io/presenter/Release/0.2/dl" /></item><item><title>Magic Mirror 3 Beta 2</title><description>Beta 2
+
+- We are working very hard on performance enhancement, should feel much much faster :)
+
+- We also have a fix on Sketch 42
+
+Beta 1
+
+- Toolbar now integrates with Sketch Inspector panel, finally no more floating around!
+- Improved image quality, as well as new 4x support!
+- Shapes with Corner Radius are supported!
+- Support Symbols!
+- Support Slices!
+- Type to Search for the target Artboard
+- Thumbnail Preview in the Artboard list
+Excluding specific Artboards on demand
+- Smart selection tool
+- etc…
+
+Read Our Blog Post:
+https://blog.magicsketch.io/using-magic-mirror-3-37f27e044964</description><pubDate>2016-12-30T23:30:00.000Z</pubDate><enclosure sparkle:version="3.0" url="http://dl.magicsketch.io/mirror3/beta2/dl" /></item><item><title>Magic Mirror 3 Beta 1</title><description>Whole New Update
+
+- Toolbar now integrates with Sketch Inspector panel, finally no more floating around!
+- Improved image quality, as well as new 4x support!
+- Shapes with Corner Radius are supported!
+- Support Symbols!
+- Support Slices!
+- Type to Search for the target Artboard
+- Thumbnail Preview in the Artboard list
+Excluding specific Artboards on demand
+- Smart selection tool
+- etc…
+
+Read Our Blog Post:
+https://blog.magicsketch.io/using-magic-mirror-3-37f27e044964
+</description><pubDate>2016-12-16T19:00:00.000Z</pubDate><enclosure sparkle:version="3.0" url="http://dl.magicsketch.io/mirror3/beta1/dl" /></item></channel></rss>
