@@ -1,0 +1,50 @@
+{
+	"name": "MagicPresenter2",
+	"description" : "Present Your Deck/Slides in Sketch",
+	"author": "James Tang",
+	"authorEmail" : "james@magicsketch.io",
+	"homepage": "magicsketch.io",
+	"identifier" : "io.magicsketch.MagicPresenter2",
+	"compatibleVersion": "47",
+	"build": 2,
+	"version": "2.0.1",
+    "appcast": "https://api.magicsketch.io/r/presenter/appcast.xml",
+
+	"commands": [
+		{
+			"name" : "Magic Presenter 2",
+			"identifier" : "run",
+			"shortcut" : "cmd shift control p",
+			"script" : "script.cocoscript",
+			"handler" : "onRun"
+		},
+		{
+			"script" : "script.cocoscript",
+			"handlers" : {
+				"actions" : {
+					"Startup" : "onStartup",
+					"OpenDocument":"onOpenDocument",
+					"SelectionChanged.finish" : "onSelectionChanged"
+				}
+			}
+		},
+         {
+             "script" : "MagicPresenterUI.framework/MagicPresenterUI.js",
+                 "handlers" : {
+                 "actions" : {
+                     "Startup" : "onStartup",
+                     "OpenDocument":"onOpenDocument",
+                     "SelectionChanged.finish" : "onSelectionChanged"
+                 }
+             }
+         }
+	],
+	"menu": {
+		"isRoot" : true,
+		"shortcut" : "",
+		"title": "MagicPresenter2",
+		"items": [
+			"run"
+		]
+	}
+}
